@@ -1,0 +1,142 @@
+As a signed in user,
+on the homepage,
+I should be able to upload a photo.
+
+When I upload a photo,
+I should be taken to a page where I can edit the photo,
+add tags, a caption, and **perhaps** draw on the photo.
+
+As a signed in user,
+I can view my profile page.
+
+As a signed in user,
+my profile page gives me the following options:
+- I can add a blurb.
+- I can view all of my images.
+- I can click on any image and edit / delete it.
+- I can see all of my messages.
+- I can view / manage my interests.
+
+As a general user,
+when I visit the homepage,
+I should see a hot right now section which has the follwing:
+- Most favorited photos (of today?).
+- Top comments.
+- Best remixes?
+
+I should also see the pseudo-random thing which
+is hard to describe and I don't really get.
+
+As a signed in user,
+I should see a section with some of the top photos from all of my interests,
+which I can click on to see more photos.
+
+As anybody,
+I can search from the homepage,
+which will bring me to a view of all the photos
+with matching tags (i guess?).
+
+As anybody,
+whenever I'm looking at a photo,
+I can click on it to take me to that photo's
+show page.
+
+As anybody,
+on a photo's show page
+I can see
+-the image
+-the user who posted it
+-the time it was posted.
+-All the comments on that photo.
+-A form to leave a comment.
+-the tags on the photo.
+-The caption
+-it's score.
+
+As a signed in user
+on a photo's view page,
+-I can upvote / downvote an image.
+-I have a button to remix the image and send it back to the user.
+
+As a signed in user,
+when i click on 'remix',
+I am taken to a page where I can draw on the photo.
+
+As a signed in user,
+when someone sends me a remix of a photo that I created,
+I am notified and can see that image.
+
+As a signed in user,
+when someone makes a top-level comment on
+one of my images,
+I am notified with the comment.
+
+As a signed in user,
+when someone makes a comment underneath a comment that
+I previously posted,
+I am notified with the comment.
+
+**As a siged in user,
+Whenever I get a message about something,
+I have an option to mute the source.
+
+When I create an account,
+I am suggested some popular tags to add to my interests.
+
+As a signed in user,
+when someone remixed my image,
+I have the option to publish it.
+
+As anybody,
+I can visit someone's profile page,
+and see the following info:
+- interests
+- username
+- photos (or a link to them)
+- avatar
+- how long theyve been using the serice
+- their blurb.
+
+
+As a signed in user,
+When I visit a photo's page
+I can favorite it.
+
+As a signed in user,
+I have an option to look at my
+favorited photos.
+
+As a signed in user,
+when I view an image,
+I can upvote an image or downvote an image.
+
+As a signed in user,
+when I view an image,
+I can upvote or downvote comments on that image.
+
+As a signed in user,
+when I view a photo,
+I can comment on the photo and comment on comments of that photo.
+
+**As a signed in user,
+when I view another user's profile,
+I can follow them, and they become one of my interests.
+
+As a signed in user,
+when I visit my profile,
+I can add new interests.
+
+As a signed in user,
+when I view an image,
+I can click on any of the tags and make it one of my interests.
+
+
+
+
+
+
+
+
+
+
+
