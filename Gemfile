@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'zurb-foundation'
+gem 'foundation_rails_helper'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

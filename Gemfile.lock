@@ -45,6 +45,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
+    foundation_rails_helper (0.4)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.1.3)
@@ -118,6 +121,8 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    zurb-foundation (4.3.2)
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -125,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  foundation_rails_helper
   jbuilder (~> 2.0)
   jquery-rails
   pg
@@ -134,3 +140,4 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (>= 1.3.0)
+  zurb-foundation
