@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-gem 'zurb-foundation'
+gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'paperclip'
 
