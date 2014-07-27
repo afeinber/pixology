@@ -1,13 +1,13 @@
 As a signed in user,
 on the homepage,
-I should be able to upload a photo.
+I should be able to upload a photo. -Katryn
 
 When I upload a photo,
 I should be taken to a page where I can edit the photo,
-add tags, a caption, and **perhaps** draw on the photo.
+add tags, a caption, and **perhaps** draw on the photo. -Katryn
 
 As a signed in user,
-I can view my profile page.
+I can view my profile page. -Kaga
 
 As a signed in user,
 my profile page gives me the following options:
@@ -15,31 +15,31 @@ my profile page gives me the following options:
 - I can view all of my images.
 - I can click on any image and edit / delete it.
 - I can see all of my messages.
-- I can view / manage my interests.
+- I can view / manage my interests. -Kaga
 
 As a general user,
 when I visit the homepage,
 I should see a hot right now section which has the follwing:
 - Most favorited photos (of today?).
 - Top comments.
-- Best remixes?
+- Best remixes? -Alex
 
 I should also see the pseudo-random thing which
-is hard to describe and I don't really get.
+is hard to describe and I don't really get. -Alex
 
 As a signed in user,
 I should see a section with some of the top photos from all of my interests,
-which I can click on to see more photos.
+which I can click on to see more photos. -Alex
 
 As anybody,
 I can search from the homepage,
 which will bring me to a view of all the photos
-with matching tags (i guess?).
+with matching tags (i guess?). -Alex
 
 As anybody,
 whenever I'm looking at a photo,
 I can click on it to take me to that photo's
-show page.
+show page. -Alex and Katryn
 
 As anybody,
 on a photo's show page
@@ -51,41 +51,41 @@ I can see
 -A form to leave a comment.
 -the tags on the photo.
 -The caption
--it's score.
+-it's score. -Katryn & Alex
 
 As a signed in user
 on a photo's view page,
--I can upvote / downvote an image.
--I have a button to remix the image and send it back to the user.
+-I can upvote / downvote an image. -Katryn
+-I have a button to remix the image and send it back to the user. -Later
 
 As a signed in user,
 when i click on 'remix',
-I am taken to a page where I can draw on the photo.
+I am taken to a page where I can draw on the photo. -Later.
 
 As a signed in user,
 when someone sends me a remix of a photo that I created,
-I am notified and can see that image.
+I am notified and can see that image. -Kaga
 
 As a signed in user,
 when someone makes a top-level comment on
 one of my images,
-I am notified with the comment.
+I am notified with the comment. -Alex
 
 As a signed in user,
 when someone makes a comment underneath a comment that
 I previously posted,
-I am notified with the comment.
+I am notified with the comment. -Alex
 
 **As a siged in user,
 Whenever I get a message about something,
-I have an option to mute the source.
+I have an option to mute the source. -Later
 
 When I create an account,
-I am suggested some popular tags to add to my interests.
+I am suggested some popular tags to add to my interests. -Alex
 
 As a signed in user,
 when someone remixed my image,
-I have the option to publish it.
+I have the option to publish it. -Later
 
 As anybody,
 I can visit someone's profile page,
