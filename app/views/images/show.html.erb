@@ -1,1 +1,12 @@
 <%= image_tag @image.sharedimg.url(:medium) %>
+
+<%= form_for @comment do |f| %>
+  <div class="row">
+    <div class="medium-6 medium-centered columns">
+      <%= f.text_field :content %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.submit class: 'button postfix' %>
+    </div>
+  </div>
+<% end %>
