@@ -8,10 +8,14 @@
 
     <div class="tabs-content">
       <div class="content active" id="profile">
-        <p>First panel content goes here...</p>
+        <p>Username: <%= current_user.username %></p>
+        <p>Blurb: <%= current_user.blurb %></p>
+        <p>Avatar: <%= image_tag current_user.avatar.url(:thumb) %></p>
       </div>
       <div class="content" id="my-images">
-        <p>Second panel content goes here...</p>
+        <% current_user.images.each do |image|%>
+          <%= image_tag image.sharedimg.url(:thumb) %>
+        <%end%>
       </div>
       <div class="content" id="followers">
         <p>Third panel content goes here...</p>
