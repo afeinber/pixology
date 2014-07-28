@@ -38,7 +38,7 @@ gem 'rails_12factor'
 
 #This is the gem for Amazon S3 storage
 gem 'aws-sdk'
-gem 'jquery-turbolinks'
+
 
 
 # gem 'zurb-foundation'
@@ -47,6 +47,8 @@ gem 'jquery-turbolinks'
 gem 'pry', group: :development
 
 gem "font-awesome-rails"
+
+gem "active_model_serializers"
 
 
 # Use ActiveModel has_secure_password
