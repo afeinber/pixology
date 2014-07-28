@@ -12,6 +12,10 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
+@mixin gutter-size($my-gutter) {
+  $column-gutter: rem-calc($my-gutter);
+}
+
 
 // $experimental: true;
 
@@ -103,7 +107,7 @@ $body-font-weight: $font-weight-normal;
 // $shiny-edge-active-color: rgba(#000, .2);
 
 
- $column-gutter: rem-calc(0);
+$column-gutter: rem-calc(0);
 
 // Media Query Ranges
 // $small-range: (0em, 40em);
@@ -1438,6 +1442,17 @@ $sub-nav-active-cursor: default;
 .expander {
   font-size: 23px;
   //line-height: 800px;
+}
+.homepage {
+  //@include gutter-size(0px);
+  $column-gutter: rem-calc(0);
+}
+#nav-dropdown {
+  padding-right: 10px;
+}
+#search-bar-nav {
+  position: relative;
+  left: 1000px;
 }
 // . {
 //   font-size: 30px;
