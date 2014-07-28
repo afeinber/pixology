@@ -31,6 +31,12 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'paperclip'
+gem 'rmagick'
+#heroku
+gem 'rails_12factor'
+
+#This is the gem for Amazon S3 storage
+gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
