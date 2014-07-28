@@ -15,7 +15,6 @@
   <div>
       <% if user_signed_in? %>
         <%= image_tag current_user.avatar.url(:thumb) %>
-        <%= gravatar_tag current_user.email, :size => 20 %>
         <strong><%= current_user.username %></strong>.
         <strong><%= current_user.email %></strong>.
         <%= link_to 'Edit profile', edit_user_registration_path %> |
