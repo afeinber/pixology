@@ -1,7 +1,27 @@
+<div class="row black-banner">
+
+  <div class="small-12 large-12 columns">
+    <h1>Add a new image</h1>
+  </div>
+
+</div>
+
+<div class="row">
 
 
-<%= form_for @image do |f| %>
+  <div class="large-1 columns"></div>
+  <div class="large-6 large-offset-3 columns">
 
-  <%= f.file_field :sharedimg %>
-  <%= f.submit %>
-<% end %>
+    <%= form_for @image do |f| %>
+      <%= f.file_field :sharedimg %>
+      <%= f.text_area :caption %>
+      <%= f.submit %>
+    <% end %>
+
+
+    <h2> Tags </h2>
+  </div>
+<div class="large-2 columns">
+
+
+</div>

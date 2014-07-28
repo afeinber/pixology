@@ -1439,6 +1439,17 @@ $sub-nav-active-cursor: default;
   font-size: 23px;
   //line-height: 800px;
 }
+
+.black-banner {
+  background-color: #000;
+  margin-bottom: 20px;
+
+  h1 {
+    color: #fff;
+    text-align: center;
+    font-weight: 800;
+  }
+}
 // . {
 //   font-size: 30px;
 // }
