@@ -2,8 +2,8 @@
     <ul class="tabs" data-tab>
       <li class="tab-title active profile-tab-wrapper"><a href="#profile">Profie</a></li>
       <li class="tab-title profile-tab-wrapper"><a href="#my-images">My images</a></li>
-      <li class="tab-title profile-tab-wrapper"><a href="#followers">Followers</a></li>
       <li class="tab-title profile-tab-wrapper"><a href="#followings">Followings</a></li>
+      <li class="tab-title profile-tab-wrapper"><a href="#followers">Followers</a></li>
     </ul>
 
     <div class="tabs-content">
@@ -17,11 +17,15 @@
           <%= image_tag image.sharedimg.url(:thumb) %>
         <%end%>
       </div>
-      <div class="content" id="followers">
-        <p>Third panel content goes here...</p>
-      </div>
       <div class="content" id="followings">
-        <p>Fourth panel content goes here...</p>
+        <% current_user.follows.each do |follow|%>
+          <%= follow.followee.username %>
+        <%end%>
+      </div>
+      <div class="content" id="followers">
+        <% current_user.inverse_follows.each do |i_follow|%>
+          <%= i_follow.user.username %>
+        <%end%>
       </div>
     </div>
 
