@@ -1447,6 +1447,13 @@ $sub-nav-active-cursor: default;
   //@include gutter-size(0px);
   $column-gutter: rem-calc(0);
 }
+#nav-dropdown {
+  padding-right: 10px;
+}
+#search-bar-nav {
+  position: relative;
+  left: 1000px;
+}
 // . {
 //   font-size: 30px;
 // }

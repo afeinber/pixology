@@ -30,6 +30,13 @@ $(document).ready(function() {
   $('.expander').on('click', function(event) {
     event.preventDefault();
     $(this).parents('.accordion-head').siblings('.content').toggleClass('active');
+    if($(this).parents('.accordion-head').siblings('.content').hasClass('active')) {
+      $(this).children('i').removeClass('fa-angle-double-down');
+      $(this).children('i').addClass('fa-angle-double-up');
+    } else {
+      $(this).children('i').removeClass('fa-angle-double-up');
+      $(this).children('i').addClass('fa-angle-double-down');
+    }
   });
 });
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title>Doodlr</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -27,10 +27,10 @@
       <ul class="right">
         <li class="active"></li>
         <li class="has-dropdown">
-          <%if user_signed_in? %><a href="#"><% current_user.username %></a>
+          <%if user_signed_in? %><a href="#"><%= current_user.username %></a>
           <% else %> <a href="#">Join</a>
           <% end %>
-          <ul class="dropdown">
+          <ul class="dropdown" id="nav-dropdown">
             <% if user_signed_in? %>
               <li><a href="#">Profile</a></li>
               <li><a href="#">Notifications</a></li>
@@ -47,7 +47,16 @@
 
       <!-- Left Nav Section -->
       <ul class="left">
-        <li><a href="#">Left Nav Button</a></li>
+        <li class="has-form" id="search-bar-nav">
+          <div class="row collapse">
+            <div class="large-8 small-9 columns">
+              <input type="text" placeholder="Find Images">
+            </div>
+            <div class="large-4 small-3 columns">
+              <a href="#" class="alert button expand">Search</a>
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
   </nav>
