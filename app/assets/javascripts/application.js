@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 //= require foundation
 //= require turbolinks
 //= require_tree .
-
+//= require cocoon
 
 // $(document).on("page:fetch", function(){
 //   $('.content').on('click', function (event) {

@@ -33,6 +33,9 @@ gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'paperclip'
 gem 'rmagick'
+
+#makes working with nested forms easier
+gem "cocoon"
 #heroku
 gem 'rails_12factor'
 
@@ -47,7 +50,7 @@ gem 'pry', group: :development
 
 gem "font-awesome-rails"
 
-
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
