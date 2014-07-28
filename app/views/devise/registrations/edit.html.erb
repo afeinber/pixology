@@ -11,13 +11,17 @@
   <% end %>
 
   <i>(leave blank if you don't want to change it)</i>
-  <%= f.password_field :password, autocomplete: "off" %></div>
+  <%= f.password_field :password, autocomplete: "off" %>
+
 
   <%= f.password_field :password_confirmation, autocomplete: "off" %>
 
+  <%= f.text_field :blurb %>
+
+  <%= f.file_field :avatar %>
+
   <i>(we need your current password to confirm your changes)</i>
   <%= f.password_field :current_password, autocomplete: "off" %>
-  <%= f.file_field :avatar %>
 
   <%= f.submit "Update" %>
 <% end %>
