@@ -7,9 +7,13 @@
 
     <div class="tabs-content">
       <div class="content active" id="profile">
-        <p>Username: <%= @profile.username %></p>
-        <p>Blurb: <%= @profile.blurb %></p>
-        <p>Avatar: <%= image_tag @profile.avatar.url(:thumb) %></p>
+      <div class="panel callout radius text-center">
+        <h1> <%= @profile.username %> </h1>
+        </tr>
+        <p><%= image_tag @profile.avatar.url(:thumb) %> </p>
+        <h4>Blurb</h4>
+        <p><%= @profile.blurb %></p>
+      </div>
       </div>
       <div class="content" id="my-images">
         <% @profile.images.each do |image|%>
@@ -18,12 +22,18 @@
       </div>
       <div class="content" id="followings">
         <% @profile.follows.each do |follow|%>
-          <%= link_to follow.followee.username, profile_path(follow.followee.id) %>
+          <div class="panel callout radius text-center">
+            <%= image_tag follow.followee.avatar.url(:thumb) %>
+            <%= link_to follow.followee.username, profile_path(follow.followee.id) %>
+          </div>
         <%end%>
       </div>
       <div class="content" id="followers">
-        <% @profile.inverse_follows.each do |i_follow|%>
-          <%= link_to i_follow.user.username, profile_path(i_follow.user.id) %>
+          <% @profile.inverse_follows.each do |i_follow|%>
+          <div class="panel callout radius text-center">
+            <%= image_tag i_follow.user.avatar.url(:thumb) %>
+            <%= link_to i_follow.user.username, profile_path(i_follow.user.id) %>
+          </div>
         <%end%>
       </div>
     </div>
