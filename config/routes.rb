@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :images
+  resources :profiles, only: [:index]
 end
