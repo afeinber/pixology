@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'devise'
 
 gem 'foundation-rails'
+gem 'foundation_rails_helper'
 gem 'paperclip'
 
 # Use ActiveModel has_secure_password
