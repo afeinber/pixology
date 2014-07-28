@@ -16,4 +16,20 @@
 //= require turbolinks
 //= require_tree .
 
+<<<<<<< HEAD
 $(function(){ $(document).foundation(); });
+=======
+// $(document).on("page:fetch", function(){
+//   $('.content').on('click', function (event) {
+//     event.preventDefault();
+
+//   });
+// });
+
+$(document).ready(function() {
+  $('.expander').on('click', function(event) {
+    event.preventDefault();
+    $(this).parents('.accordion-head').siblings('.content').toggleClass('active');
+  });
+});
+>>>>>>> make-accordion

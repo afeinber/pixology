@@ -28,9 +28,19 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+
 gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'paperclip'
+
+
+# gem 'zurb-foundation'
+#gem 'foundation_rails_helper'
+
+gem 'pry', group: :development
+
+gem "font-awesome-rails"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -4,6 +4,7 @@
   <%= devise_error_messages! %>
 
 
+
   <%= f.text_field :username, autofocus: true %>
   <%= f.email_field :email, autofocus: true %>
   <%= f.password_field :password, autocomplete: "off" %>
@@ -11,6 +12,7 @@
   <%= f.file_field :avatar %>
 
   <%= f.submit "Sign up" %>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
