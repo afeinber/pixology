@@ -3,9 +3,15 @@
     <dl class="accordion" data-accordion>
       <dd class="accordion-navigation">
         <div class="accordion-head">
-          <a href="#collapse" class="accordion-link">collapse</a>
-          <a href="#panel1" class="accordion-link">#such-pictures</a>
-          <a href="#show-all" class="accordion-link">show all</a>
+          <div class="accordion-wrapper accordion-left-wrapper">
+            <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
+          </div>
+          <div class="accordion-wrapper accordion-center-wrapper">
+            <a href="#" class="accordion-link accordion-center">#such-pictures</a>
+          </div>
+          <div class="accordion-wrapper accordion-right-wrapper">
+            <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
+          </div>
         </div>
         <div id="panel1" class="content active">
           <!-- <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 imagelist"> -->

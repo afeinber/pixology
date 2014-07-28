@@ -1321,6 +1321,7 @@ $sub-nav-active-cursor: default;
 // $range-slider-handle-cursor: pointer;
 
 @import 'foundation';
+@import "font-awesome";
 
 .thumb-img {
             padding: 0;
@@ -1347,13 +1348,34 @@ $sub-nav-active-cursor: default;
   height: 57px;
   background: #efefef;
   padding: 1rem;
+  line-height: 10px;
+
 }
 .accordion-head:hover {
   background: #e3e3e3;
 }
-.accordion-link {
+.accordion-wrapper {
   width: 33%;
   display: inline-block;
+  font-size: 20px;
+  color: black;
+
 }
+.accordion-right-wrapper {
+  text-align: right;
+}
+.accordion-center-wrapper{
+  text-align: center;
+}
+.accordion-link {
+  color: black;
+}
+.expander {
+  font-size: 23px;
+  //line-height: 800px;
+}
+// . {
+//   font-size: 30px;
+// }
 
 

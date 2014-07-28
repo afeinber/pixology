@@ -24,8 +24,8 @@
 // });
 
 $(document).ready(function() {
-  $('.accordion-navigation').on('click', function(event) {
+  $('.expander').on('click', function(event) {
     event.preventDefault();
-    $(this).children('.content').toggleClass('active');
+    $(this).parents('.accordion-head').siblings('.content').toggleClass('active');
   });
 });
