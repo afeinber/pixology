@@ -12,5 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require_tree .
+
+// $(document).on("page:fetch", function(){
+//   $('.content').on('click', function (event) {
+//     event.preventDefault();
+
+//   });
+// });
+
+$(document).ready(function() {
+  $('.accordion-navigation').on('click', function(event) {
+    event.preventDefault();
+    $(this).children('.content').toggleClass('active');
+  });
+});

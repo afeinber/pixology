@@ -1,3 +1,3 @@
 module ApplicationHelper
-  include FoundationRailsHelper::FlashHelper
+  #include FoundationRailsHelper::FlashHelper
 end
