@@ -13,23 +13,45 @@
 
   <body>
 
-  <div>
-      <% if user_signed_in? %>
-        <%= image_tag current_user.avatar.url(:thumb) %>
-        <strong><%= current_user.username %></strong>.
-        <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> |
-        <%= link_to "Login", new_user_session_path %>
-      <% end %>
-   </div>
-   <% flash.each do |name, msg| %>
-     <% if msg.is_a?(String) %>
-       <%= content_tag :div, msg, :class => "flash_#{name}" %>
-     <% end %>
-   <% end %>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Doodlr</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active"></li>
+        <li class="has-dropdown">
+          <%if user_signed_in? %><a href="#"><% current_user.username %></a>
+          <% else %> <a href="#">Join</a>
+          <% end %>
+          <ul class="dropdown">
+            <% if user_signed_in? %>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Notifications</a></li>
+              <li><a href="#">Add Image</a></li>
+              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a href="#">Left Nav Button</a></li>
+      </ul>
+    </section>
+  </nav>
+  <%= display_flash_messages %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
