@@ -7,7 +7,7 @@
 
 <div class="row">
   <div class="medium-6 medium-centered columns">
-    <%= form_for [@image, @comment], :html => {:class => "nice new_comment_form"} do |f| %>
+    <%= form_for [@image, @comment], :html => {:id => 'new_image_comment_form', :class => "nice new_comment_form"} do |f| %>
       <%= f.text_area :content, label: false, placeholder: 'Enter comment...' %>
       <%= f.submit 'Add Comment' %>
     <% end %>

@@ -10,4 +10,10 @@
       <p class="right footer-icons"><a href='#' class="comment-reply"><i class="fa fa-edit"></i></a> &nbsp; <a class="expand-comments"> <i class="fa fa-plus"></i></a>
     </div>
   </div>
+  <div class="hidden-form comment-comment-form">
+      <form accept-charset="UTF-8" action="/comments/{{id}}/comments" class="nice new_comment_form" id="new_comment" method="post">
+        <textarea class="medium input-text" id="comment_content" name="comment[content]" placeholder="Enter comment...">
+  </textarea>
+        <input class="small radius success button" name="commit" type="submit" value="Add comment" />
+  </form>  </div>
 </div>

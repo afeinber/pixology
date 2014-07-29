@@ -3,7 +3,7 @@ var Akk = Akk || {};
 Akk.initialize = function() {
   $(document).foundation();
 
-  $('.expander').on('click', function(event) {
+  $('#image-comments').on('click', '.expander', function(event) {
     event.preventDefault();
     $(this).parents('.accordion-head').siblings('.content').toggleClass('active');
     if($(this).parents('.accordion-head').siblings('.content').hasClass('active')) {
@@ -15,23 +15,19 @@ Akk.initialize = function() {
     }
   });
 
-  $('.comment-reply').click(function(event){
+  $('#image-comments').on('click', '.comment-reply', function(event){
     event.preventDefault();
     $($(this).parents('.panel-footer')[0]).siblings('.comment-comment-form').toggle();
   });
   $('.nested-comment').hide();
-  $('.new_comment_form').on('submit', function(event){
+  $('#image-comments').on('submit', '.new_comment_form', function(event) {
     event.preventDefault();
-    var commentPath = $(this).attr('action');
-    var content = $(this).children('#comment_content').val();
-
-    $(this).children('#comment_content').val('');
+   Akk.createComment(event.currentTarget);
+ });
+  $('#new_image_comment_form').on('submit', function(event) {
     event.preventDefault();
-
-    var newComment = new Akk.Comment(content,commentPath, event.target);
-    newComment.remoteCreate();
-
-  });
+   Akk.createComment(event.currentTarget);
+ });
 
   $('.expand-comments').click(function(event){
     event.preventDefault();
@@ -39,23 +35,14 @@ Akk.initialize = function() {
 
   });
 };
+Akk.createComment = function(target) {
 
-Akk.submitForm = function(formElement) {
+  var commentPath = $(target).attr('action');
+  var content = $(target).children('#comment_content').val();
 
+  $(target).children('#comment_content').val('');
 
-  $.ajax({
-    url: commentPath,
-    type: 'POST',
-    dataType: 'json',
-    data: { comment: { content: content } },
-  })
-  .done(Akk.appendComment.bind(formElement))
-  .fail(function() {
-    console.log("error");
-  });
+  var newComment = new Akk.Comment(content,commentPath, target);
+  newComment.remoteCreate();
 };
 
-Akk.appendComment = function(comment) {
-  console.log(comment);
-  console.log(this);
-};
