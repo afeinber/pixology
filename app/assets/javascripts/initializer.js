@@ -19,19 +19,28 @@ Akk.initialize = function() {
     event.preventDefault();
     $($(this).parents('.panel-footer')[0]).siblings('.comment-comment-form').toggle();
   });
+
+  //Hide all nested comments when the page loads.
   $('.nested-comment').hide();
+  $('.comment-comment-form').hide();
+
+
   $('#image-comments').on('submit', '.new_comment_form', function(event) {
     event.preventDefault();
    Akk.createComment(event.currentTarget);
+   $(this).parents('.comment-comment-form').hide();
  });
+
   $('#new_image_comment_form').on('submit', function(event) {
     event.preventDefault();
    Akk.createComment(event.currentTarget);
  });
 
-  $('.expand-comments').click(function(event){
+  $('#image-comments').on('click', '.expand-comments', function(event){
     event.preventDefault();
     $($(this).parents('.individual-comment')[0]).children('.individual-comment').toggle();
+    $(this).children('i').toggleClass('fa-angle-double-down');
+    $(this).children('i').toggleClass('fa-angle-double-up');
 
   });
 };

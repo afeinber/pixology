@@ -27,5 +27,8 @@ Akk.Comment.prototype.appendComment = function(comment){
 
   var appendix = $($(this.formElement).parents('.individual-comment')[0]).length !== 0 ? $($(this.formElement).parents('.individual-comment')[0]) : $('#image-comments');
   appendix.children('.individual-comment').show();
+  var icon = $(appendix.children('.fa-angle-double-up, .fa-icon-double-down')[0]);
+  icon.toggleClass('fa-icon-double-down');
+  icon.toggleClass('fa-icon-double-up');
   appendix.append(HandlebarsTemplates.comment(comment));
 };

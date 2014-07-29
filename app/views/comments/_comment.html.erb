@@ -4,13 +4,13 @@
   </div>
   <div class="panel-footer">
     <div class="medium-10 columns">
-      <p><strong><%=comment.user.username%></strong> at <%= comment.created_at %> </p>
+      <p><strong><%=comment.user.username%></strong><%= time_ago_in_words(comment.created_at) %> ago</p>
     </div>
     <div class="medium-2 columns">
-      <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'plus' %></a></p>
+      <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'angle-double-down' %></a></p>
     </div>
   </div>
-  <div class="hidden-form comment-comment-form">
+  <div class="comment-comment-form">
     <%= form_for new_comment, url: comment_comments_path(comment), :html => {:class => "nice new_comment_form"} do |f| %>
       <%= f.text_area :content, label: false, placeholder: 'Enter comment...' %>
       <%= f.submit 'Add comment' %>
