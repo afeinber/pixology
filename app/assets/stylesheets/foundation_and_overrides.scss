@@ -1489,6 +1489,21 @@ $sub-nav-active-cursor: default;
 }
 .photo-grid {
   display: inline-block;
+  background-color: #333333;
+}
+.title-island {
+  width: 600px;
+  display: inline-block;
+  
+  h1 {
+    padding: 20px;
+    margin: -50px;
+    color: #fff;
+    text-align: center;
+    font-weight: 800;
+    font-style: italic;
+  }
+
 }
 .nested-comment{
 
