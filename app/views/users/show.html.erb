@@ -7,15 +7,24 @@
 
     <div class="tabs-content">
       <div class="content active" id="profile">
-      <div class="panel callout radius text-center">
-        <h1> <%= @profile.username %> </h1>
-        <p><%= image_tag @profile.avatar.url(:thumb) %> </p>
-        <h4>Blurb</h4>
-        <p><%= @profile.blurb %></p>
-      </div>
+        <div class="panel callout radius text-center">
+          <h1> <%= @user.username %> </h1>
+          <p><%= image_tag @user.avatar.url(:thumb) %> </p>
+          <h4>Blurb</h4>
+          <p><%= @user.blurb %></p>
+        </div>
+        <div class="panel callout radius text-center">
+          <h1> Interests </h1>
+          <% @user.interests.each do |interest|%>
+            <div class = 'my-interests' interest-id = "<%= interest.id %>">
+              <p><%= interest.category.description %></p>
+              <p><button class ='tiny alert' id ='delete-button'>Delete</button></p>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="content" id="my-images">
-        <% @profile.images.each do |image|%>
+        <% @user.images.each do |image|%>
           <div class = 'my-images' image-id = "<%= image.id %>">
             <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
             <p><button class ='alert' id ='delete-button'>Delete</button><button>Edit</button></p>
@@ -23,18 +32,18 @@
         <%end%>
       </div>
       <div class="content" id="followings">
-        <% @profile.follows.each do |follow|%>
+        <% @user.follows.each do |follow|%>
           <div class="panel callout radius text-center">
             <%= image_tag follow.followee.avatar.url(:thumb) %>
-            <%= link_to follow.followee.username, profile_path(follow.followee.id) %>
+            <%= link_to follow.followee.username, user_path(follow.followee.id) %>
           </div>
         <%end%>
       </div>
       <div class="content" id="followers">
-          <% @profile.inverse_follows.each do |i_follow|%>
+          <% @user.inverse_follows.each do |i_follow|%>
           <div class="panel callout radius text-center">
             <%= image_tag i_follow.user.avatar.url(:thumb) %>
-            <%= link_to i_follow.user.username, profile_path(i_follow.user.id) %>
+            <%= link_to i_follow.user.username, user_path(i_follow.user.id) %>
           </div>
         <%end%>
       </div>

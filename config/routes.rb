@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :images
-  resources :profiles, only: [:show]
+  resources :interests, only:[:destroy]
+  resources :users, only: [:show]
 end
