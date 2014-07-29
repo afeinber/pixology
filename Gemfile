@@ -51,6 +51,8 @@ gem 'pry', group: :development
 gem "font-awesome-rails"
 
 gem 'dotenv-rails', :groups => [:development, :test]
+
+gem "active_model_serializers"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
