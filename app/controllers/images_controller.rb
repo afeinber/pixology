@@ -1,7 +1,8 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  
+
   def index
+    @images = Image.order(created_at: :desc)
   end
   def show
     @image = Image.find(params[:id])
