@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :images
-  resources :interests, only:[:destroy]
+  resources :interests, only:[:create, :destroy]
+  resources :follows, only:[:create, :destroy]
   resources :users, only: [:show]
 end
