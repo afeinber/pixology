@@ -19,6 +19,7 @@
   <%= f.text_field :blurb %>
 
   <%= f.file_field :avatar %>
+  <p><%= image_tag @user.avatar.url(:thumb) %></p>
 
   <i>(we need your current password to confirm your changes)</i>
   <%= f.password_field :current_password, autocomplete: "off" %>
