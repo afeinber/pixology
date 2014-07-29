@@ -16,7 +16,10 @@
       </div>
       <div class="content" id="my-images">
         <% @profile.images.each do |image|%>
-          <%= image_tag image.sharedimg.url(:thumb) %>
+          <div image-id = "<%= image.id %>">
+            <%= image_tag image.sharedimg.url(:thumb) %>
+            <p><button id ='delete-button'>Delete</button><button>Edit</button></p>
+          </div>
         <%end%>
       </div>
       <div class="content" id="followings">
