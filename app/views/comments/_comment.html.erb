@@ -10,11 +10,26 @@
       <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'angle-double-down' %></a></p>
     </div>
   </div>
-  <div class="comment-comment-form">
+  <div class="comment-comment-form row collapse">
+
     <%= form_for new_comment, url: comment_comments_path(comment), :html => {:class => "nice new_comment_form"} do |f| %>
-      <%= f.text_area :content, label: false, placeholder: 'Enter comment...' %>
-      <%= f.submit 'Add comment' %>
+      <div class="small-10 columns">
+      <%= f.text_field :content, label: false, placeholder: 'Enter comment...' %>
+      </div>
+      <div class="small-2 columns">
+        <%= f.submit 'Add', class: 'button postfix' %>
+      </div>
     <% end %>
   </div>
   <%= render partial: 'comments/comment', collection: comment.comments, locals: { new_comment: new_comment } %>
 </div>
+
+
+<!-- <div class="row collapse">
+        <div class="small-10 columns">
+          <input type="text" placeholder="Hex Value">
+        </div>
+        <div class="small-2 columns">
+          <a href="#" class="button postfix">Go</a>
+        </div>
+      </div> -->

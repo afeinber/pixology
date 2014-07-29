@@ -38,7 +38,7 @@ Akk.initialize = function() {
 
   $('#image-comments').on('click', '.expand-comments', function(event){
     event.preventDefault();
-    $($(this).parents('.individual-comment')[0]).children('.individual-comment').toggle();
+    $($(this).parents('.individual-comment')[0]).children('.individual-comment').slideToggle(200);
     $(this).children('i').toggleClass('fa-angle-double-down');
     $(this).children('i').toggleClass('fa-angle-double-up');
 
@@ -47,9 +47,9 @@ Akk.initialize = function() {
 Akk.createComment = function(target) {
 
   var commentPath = $(target).attr('action');
-  var content = $(target).children('#comment_content').val();
+  var content = $(target).find('#comment_content').val();
 
-  $(target).children('#comment_content').val('');
+  $(target).find('#comment_content').val('');
 
   var newComment = new Akk.Comment(content,commentPath, target);
   newComment.remoteCreate();

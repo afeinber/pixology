@@ -26,9 +26,9 @@ Akk.Comment.prototype.appendComment = function(comment){
   // console.log(this);
 
   var appendix = $($(this.formElement).parents('.individual-comment')[0]).length !== 0 ? $($(this.formElement).parents('.individual-comment')[0]) : $('#image-comments');
-  appendix.children('.individual-comment').show();
-  var icon = $(appendix.children('.fa-angle-double-up, .fa-icon-double-down')[0]);
-  icon.toggleClass('fa-icon-double-down');
-  icon.toggleClass('fa-icon-double-up');
+  appendix.children('.individual-comment').slideDown(200);
+  var icon = $(appendix.find('.fa-angle-double-up, .fa-angle-double-down')[0]);
+  icon.toggleClass('fa-angle-double-down');
+  icon.toggleClass('fa-angle-double-up');
   appendix.append(HandlebarsTemplates.comment(comment));
 };
