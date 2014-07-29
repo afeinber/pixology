@@ -16,7 +16,8 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to @image, notice: 'Your image was successfully added to the collection.'
      else
-       render action: 'new'
+      flash.now[:alert] = "You must select an image before continuing."
+      render action: 'new'
     end
   end
 

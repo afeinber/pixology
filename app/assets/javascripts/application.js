@@ -40,8 +40,6 @@ $(document).ready(function() {
     }
   });
 
-  jQuery.fn.submitOnClick = function() {
-    this.find('input[type=')
   }
   $('#category')
       .on('cocoon:before-insert', function(e,category_to_be_added) {
@@ -54,6 +52,22 @@ $(document).ready(function() {
       });
       .on('cocoon:before-insert', function(e,category_to_be_added) {
         category_to_be_added.submit();
+        $.ajax({
+          url: '/images/:image_id/categories',
+          type: 'default GET (Other values: POST)',
+          dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+          data: {param1: 'value1'},
+        })
+        .done(function() {
+          console.log("success");
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          console.log("complete");
+        });
+        
       })
       
 });
