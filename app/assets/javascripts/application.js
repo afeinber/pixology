@@ -54,8 +54,8 @@ $(document).ready(function() {
         category_to_be_added.submit();
         $.ajax({
           url: '/images/:image_id/categories',
-          type: 'default GET (Other values: POST)',
-          dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+          type: 'POST',
+          dataType: 'json',
           data: {param1: 'value1'},
         })
         .done(function() {
