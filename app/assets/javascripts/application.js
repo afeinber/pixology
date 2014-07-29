@@ -16,6 +16,7 @@
 //= require handlebars.runtime
 //= require turbolinks
 //= require_tree .
+//= require js-routes
 
 
 $(document).on('page:load', Akk.initialize());

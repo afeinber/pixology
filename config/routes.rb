@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
 
   resources :images
-  resources :profiles, only: [:show]
+
+  resources :interests, only:[:create, :destroy]
+  resources :follows, only:[:create, :destroy]
+  resources :users, only: [:show]
+
   resources :images do
     resources :comments
   end

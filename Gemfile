@@ -33,6 +33,8 @@ gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'paperclip'
 gem 'rmagick'
+gem 'js-routes'
+
 #heroku
 gem 'rails_12factor', group: :production
 
