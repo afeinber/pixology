@@ -1,17 +1,17 @@
-<div class="individual-comment <%= 'nested-comment hidden-form' if comment.commentable_type == 'Comment'%>">
+<div class="individual-comment <%= 'nested-comment' if comment.commentable_type == 'Comment'%>">
   <div class="panel">
     <p><%= comment.content %></p>
   </div>
   <div class="panel-footer">
-    <div class="medium-8 columns">
-      <p>made by <strong><%=comment.user.username%></strong> at <%= comment.created_at %> </p>
+    <div class="medium-10 columns">
+      <p><strong><%=comment.user.username%></strong> at <%= comment.created_at %> </p>
     </div>
-    <div class="medium-4 columns">
+    <div class="medium-2 columns">
       <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'plus' %></a></p>
     </div>
   </div>
   <div class="hidden-form comment-comment-form">
-    <%= form_for new_comment, url: comment_comments_path(comment_id: 1) do |f| %>
+    <%= form_for new_comment, url: comment_comments_path(comment), :html => {:class => "nice new_comment_form"} do |f| %>
       <%= f.text_area :content, label: false, placeholder: 'Enter comment...' %>
       <%= f.submit 'Add comment' %>
     <% end %>

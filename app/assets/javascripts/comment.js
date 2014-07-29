@@ -25,6 +25,7 @@ Akk.Comment.prototype.appendComment = function(comment){
   // this.formElement.append("<h3> Comment was " + this.content + " </h3>");
   // console.log(this);
 
-  var appendix = $(this).parents('.individual-comment').length !== 0 ? $(this).parents('.individual-comment') : $('#image-comments');
+  var appendix = $($(this.formElement).parents('.individual-comment')[0]).length !== 0 ? $($(this.formElement).parents('.individual-comment')[0]) : $('#image-comments');
+  appendix.children('.individual-comment').show();
   appendix.append(HandlebarsTemplates.comment(comment));
 };

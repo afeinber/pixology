@@ -17,15 +17,15 @@ Akk.initialize = function() {
 
   $('.comment-reply').click(function(event){
     event.preventDefault();
-    $($(this).parents('.panel-footer')[0]).siblings('.comment-comment-form').toggleClass('hidden-form');
+    $($(this).parents('.panel-footer')[0]).siblings('.comment-comment-form').toggle();
   });
+  $('.nested-comment').hide();
+  $('.new_comment_form').on('submit', function(event){
+    event.preventDefault();
+    var commentPath = $(this).attr('action');
+    var content = $(this).children('#comment_content').val();
 
-  $('#new_comment').on('submit', function(event){
-
-    var commentPath = $('#new_comment').attr('action');
-    var content = $('#comment_content').val();
-
-    $('#comment_content').val('');
+    $(this).children('#comment_content').val('');
     event.preventDefault();
 
     var newComment = new Akk.Comment(content,commentPath, event.target);
@@ -35,7 +35,7 @@ Akk.initialize = function() {
 
   $('.expand-comments').click(function(event){
     event.preventDefault();
-    $($(this).parents('.individual-comment')[0]).children('.individual-comment').toggleClass('hidden-form');
+    $($(this).parents('.individual-comment')[0]).children('.individual-comment').toggle();
 
   });
 };

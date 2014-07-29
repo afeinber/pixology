@@ -1388,6 +1388,11 @@ $sub-nav-active-cursor: default;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
+.homepage {
+  //@include gutter-size(0px);
+  $column-gutter: rem-calc(0);
+}
+
 
 @import 'foundation';
 @import "font-awesome";
@@ -1443,10 +1448,7 @@ $sub-nav-active-cursor: default;
   font-size: 23px;
   //line-height: 800px;
 }
-.homepage {
-  //@include gutter-size(0px);
-  $column-gutter: rem-calc(0);
-}
+
 #nav-dropdown {
   padding-right: 10px;
 }
@@ -1456,6 +1458,7 @@ $sub-nav-active-cursor: default;
 }
 #image-comments {
   background: #efefef;
+  padding: 50px 100px 50px 100px;
 }
 .panel-footer{
 
