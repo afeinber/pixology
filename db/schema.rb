@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728153126) do
+ActiveRecord::Schema.define(version: 20140729135506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20140728153126) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "sharedimg_file_name"
+    t.string   "sharedimg_file_name",    null: false
     t.string   "sharedimg_content_type"
     t.integer  "sharedimg_file_size"
     t.datetime "sharedimg_updated_at"

@@ -1,3 +1,4 @@
 class ImageSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :caption
+  has_many :categories
 end
