@@ -1,5 +1,11 @@
 class ImagesController < ApplicationController
 
+  def default_serializer_options
+    {root: false}
+  end
+
+  respond_to :html, :json
+
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
@@ -16,15 +22,17 @@ class ImagesController < ApplicationController
     @image = Image.new
     20.times { @image.categories.build }
   end
-  
+
   def create
-    @image = Image.new(image_params)
-    @image.user_id = current_user.id
-  
+
+    @image = current_user.images.new(image_params)
+
     if @image.save
-      redirect_to @image, notice: 'Your image was successfully added to the collection.'
-     else
-      flash.now[:alert] = "You must select an image before continuing."
+
+      #render :text => @image.sharedimg.url(:thumb)
+      respond_with @image
+
+    else
       render action: 'new'
     end
   end

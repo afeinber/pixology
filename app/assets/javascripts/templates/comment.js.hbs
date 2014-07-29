@@ -4,10 +4,33 @@
   </div>
   <div class="panel-footer">
     <div class="medium-10 columns">
-      <p><strong>{{user.username}}</strong> at {{created_at}} </p>
+      <p><strong>{{user.username}}</strong> {{timeSince created_at}} ago</p>
     </div>
     <div class="medium-2 columns">
-      <p class="right footer-icons"><a href='#' class="comment-reply"><i class="fa fa-edit"></i></a> &nbsp; <a class="expand-comments"> <i class="fa fa-plus"></i></a>
+      <p class="right footer-icons"><a href='#' class="comment-reply"><i class="fa fa-edit"></i></a> &nbsp; <a class="expand-comments"> <i class="fa fa-angle-double-down"></i></a>
     </div>
   </div>
+  <div class="comment-comment-form row collapse" style="display: none;">
+    <form accept-charset="UTF-8" action="/comments/{{id}}/comments" class="nice new_comment_form" id="new_comment" method="post">
+      <div class="small-10 columns">
+        <input class="medium input-text" id="comment_content" name="comment[content]" placeholder="Enter comment..." type="text" />
+      </div>
+      <div class="small-2 columns">
+        <input class="button postfix" name="commit" type="submit" value="Add" />
+      </div>
+    </form>
+  </div>
 </div>
+
+
+
+{{!--
+    <form accept-charset="UTF-8" action="/comments/1/comments" class="nice new_comment_form" id="new_comment" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qMaUuX/52y04kxS5NUwniQq/p7o0UrmKCGz8pzrR77A=" /></div>
+      <div class="small-10 columns">
+      <input class="medium input-text" id="comment_content" name="comment[content]" placeholder="Enter comment..." type="text" />
+      </div>
+      <div class="small-2 columns">
+        <input class="button postfix" name="commit" type="submit" value="Add comment" />
+      </div>
+</form>  </div>
+ --}}

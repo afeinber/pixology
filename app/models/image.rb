@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
+  belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :votes, as: :votable
   has_many :categories, through: :categorized_images
@@ -9,7 +10,7 @@ class Image < ActiveRecord::Base
 
   # This method associates the attribute ":sharedimg" with a file attachment
   has_attached_file :sharedimg, styles: {
-    thumb: '200x200>',
+    thumb: '200>x200>',
     square: '400x400#',
     medium: '600x800>'
   }

@@ -1,4 +1,5 @@
 
+
 <div class="row black-banner">
 
   <div class="small-12 large-12 columns">
@@ -6,15 +7,17 @@
   </div>
 
 </div>
-
+<img id="thumb" src="/playground/images/icons/128px/zurb.png">
 <div class="row">
 
   <div class="small-1 med-2 large-2 columns"></div>
 
   <div class="small-10 small-offset-1 med-8 med-offset-2 large-6 large-offset-3 columns">
-    <%= form_for @image do |f| %>
-      <%= f.file_field :sharedimg %>
-      <%= f.text_area :caption %>
+
+
+    <%= form_for(@image, :remote => true, :html => {:id => 'uploadForm', :multipart => true }) do |f| %>
+     Upload a file: <%= f.file_field :sharedimg, :label => false %>
+    <% end %>
   </div>
 
   <div class="small-1 med-2 large-2 columns"></div>
@@ -33,7 +36,7 @@
       </div>
       <br>
 <br>
-      
+
       <%= f.submit 'Add image', :class => 'button expand' %>
     <% end %>
   </div>
@@ -42,5 +45,4 @@
 
 </div>
 
-   
 
