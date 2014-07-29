@@ -1,0 +1,9 @@
+<h2>All images</h2>
+
+<% @images.each do |image| %>
+  <div class="photo-grid">
+    <%= image_tag @image.sharedimg.url(:thumb) %>
+
+    
+  </div>
+<% end %>
