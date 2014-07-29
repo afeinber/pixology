@@ -16,6 +16,7 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
+    @image.user_id = current_user.id
 
     if @image.save
       redirect_to @image, notice: 'Image was successfully added.'
