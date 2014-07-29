@@ -1,6 +1,8 @@
 class ImagesController < ApplicationController
    def show
     @image = Image.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(commentable: @image)
   end
   def new
     @image = Image.new
