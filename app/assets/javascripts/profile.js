@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var ImageApp = {
+  var ProfileApp = {
 
   deleteImage: function(event){
     Id = event.target.parentElement.parentElement.getAttribute('image-id');
@@ -11,9 +11,13 @@ $(document).ready(function() {
     })
     .done(event.target.parentElement.parentElement.remove());
     event.preventDefault();
+  },
+
+  initializer: function(event){
+    $('#my-images').on('click', '#delete-button',ProfileApp.deleteImage);
   }
 };
 
-  $('#my-images').on('click', '#delete-button',ImageApp.deleteImage);
+  ProfileApp.initializer();
 
 });

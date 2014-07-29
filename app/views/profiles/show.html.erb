@@ -16,9 +16,9 @@
       </div>
       <div class="content" id="my-images">
         <% @profile.images.each do |image|%>
-          <div image-id = "<%= image.id %>">
-            <%= image_tag image.sharedimg.url(:thumb) %>
-            <p><button id ='delete-button'>Delete</button><button>Edit</button></p>
+          <div class = 'my-images' image-id = "<%= image.id %>">
+            <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+            <p><button class ='alert' id ='delete-button'>Delete</button><button>Edit</button></p>
           </div>
         <%end%>
       </div>

@@ -8,6 +8,21 @@ Image.create(
   sharedimg: File.new("#{Rails.root}/app/assets/images/blackcats-lg.jpg")
 )
 
+Image.create(
+  user_id: 1,
+  sharedimg: File.new("#{Rails.root}/app/assets/images/book-lg.jpg")
+)
+
+Image.create(
+  user_id: 1,
+  sharedimg: File.new("#{Rails.root}/app/assets/images/books-lg.jpg")
+)
+
+Image.create(
+  user_id: 1,
+  sharedimg: File.new("#{Rails.root}/app/assets/images/dog-lg.jpg")
+)
+
 #Alex following Katryn and Kaga
 Follow.create(
   user_id: 1,
