@@ -35,7 +35,7 @@ Akk.initialize = function() {
 
   $('.expand-comments').click(function(event){
     event.preventDefault();
-    $(this).parents('.individual-comment').children('.individual-comment').toggleClass('hidden-form');
+    $($(this).parents('.individual-comment')[0]).children('.individual-comment').toggleClass('hidden-form');
 
   });
 };

@@ -20,8 +20,11 @@ Akk.Comment.prototype.remoteCreate = function(){
   });
 };
 
-Akk.Comment.prototype.appendComment = function(){
-  console.log(this.content);
-  this.formElement.append("<h3> Comment was " + this.content + " </h3>");
-  console.log(this);
+Akk.Comment.prototype.appendComment = function(comment){
+  // console.log(this.content);
+  // this.formElement.append("<h3> Comment was " + this.content + " </h3>");
+  // console.log(this);
+
+  var appendix = $(this).parents('.individual-comment').length !== 0 ? $(this).parents('.individual-comment') : $('#image-comments');
+  appendix.append(HandlebarsTemplates.comment(comment));
 };

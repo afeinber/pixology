@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
 
+
     respond_with(@comment)
 
   end
