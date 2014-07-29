@@ -1454,6 +1454,48 @@ $sub-nav-active-cursor: default;
   position: relative;
   left: 1000px;
 }
+#image-comments {
+  background: #efefef;
+}
+.panel-footer{
+
+  @include panel(
+    // Sets the panel background color. Default: $panel-pg
+    $bg:#e3e3e3,
+    // Sets the panel padding amount. Default: $panel-padding
+    $padding:20px,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    $adjust:true
+  );
+  margin-top: -22px;
+  height: 30px;
+}
+.panel-footer p {
+  line-height: 0px;
+}
+.hidden-form {
+  display: none;
+}
+.comment-reply, .expand-comments {
+  font-size: 25px;
+
+  color: black;
+}
+.footer-icons {
+  margin-top: -12px;
+}
+
+.nested-comment{
+
+
+
+  .panel {
+    width: 80%;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 // . {
 //   font-size: 30px;
 // }

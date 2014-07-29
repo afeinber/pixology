@@ -34,11 +34,12 @@ gem 'foundation_rails_helper'
 gem 'paperclip'
 gem 'rmagick'
 #heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 #This is the gem for Amazon S3 storage
 gem 'aws-sdk'
 
+gem 'handlebars_assets'
 
 
 # gem 'zurb-foundation'

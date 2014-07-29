@@ -14,17 +14,34 @@ Akk.initialize = function() {
       $(this).children('i').addClass('fa-angle-double-down');
     }
   });
-  $('#new_comment').on('submit', function(event){
+
+  $('.comment-reply').click(function(event){
     event.preventDefault();
-    Akk.submitForm(event.target);
-    // $.proxy(Akk.submitForm, this);
+    $($(this).parents('.panel-footer')[0]).siblings('.comment-comment-form').toggleClass('hidden-form');
+  });
+
+  $('#new_comment').on('submit', function(event){
+
+    var commentPath = $('#new_comment').attr('action');
+    var content = $('#comment_content').val();
+
+    $('#comment_content').val('');
+    event.preventDefault();
+
+    var newComment = new Akk.Comment(content,commentPath, event.target);
+    newComment.remoteCreate();
+
+  });
+
+  $('.expand-comments').click(function(event){
+    event.preventDefault();
+    $(this).parents('.individual-comment').children('.individual-comment').toggleClass('hidden-form');
+
   });
 };
 
 Akk.submitForm = function(formElement) {
-  var commentPath = $('#new_comment').attr('action');
-  var content = $('#comment_content').val();
-  $('#comment_content').val('');
+
 
   $.ajax({
     url: commentPath,

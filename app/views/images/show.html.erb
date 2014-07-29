@@ -8,8 +8,42 @@
 <div class="row">
   <div class="medium-6 medium-centered columns">
     <%= form_for [@image, @comment] do |f| %>
-      <%= f.text_area :content, placeholder: 'Enter comment...' %>
+      <%= f.text_area :content, label: false, placeholder: 'Enter comment...' %>
       <%= f.submit 'Add Comment' %>
     <% end %>
   </div>
 </div>
+
+<div class="row">
+  <div class="medium-8 medium-centered columns" id='image-comments'>
+    <div class="individual-comment">
+      <div class="panel">
+        <p>This is the comment that I made</p>
+      </div>
+      <div class="panel-footer">
+        <div class="medium-8 columns">
+          <p>made by <strong>alexmega</strong> at 10:12 </p>
+        </div>
+        <div class="medium-4 columns">
+          <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'plus' %></a>
+        </div>
+      </div>
+      <div class="hidden-form comment-comment-form">
+        <%= form_for @comment, url: comment_comments_path(comment_id: 1) do |f| %>
+          <%= f.text_area :content, label: false, placeholder: 'Enter comment...' %>
+          <%= f.submit 'Add comment' %>
+        <% end %>
+      </div>
+      <div class="individual-comment nested-comment hidden-form">
+        <div class="panel">
+          <p>This is a nested comment</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h5>This is a regular panel.</h5>
+      <p>It has an easy to override visual style, and is appropriately subdued.</p>
+    </div>
+  </div>
+</div>
+
