@@ -33,7 +33,7 @@ $(document).on('page:load', Akk.initialize());
 // });
 
 
-  
+
 $('#category')
     .on('cocoon:before-insert', function(e,category_to_be_added) {
       category_to_be_added.fadeIn('slow');
@@ -43,8 +43,3 @@ $('#category')
       $(this).data('remove-timeout', 1000);
       category.fadeOut('slow');
     });
-      
-      
-});
-
-
