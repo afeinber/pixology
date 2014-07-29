@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require handlebars.runtime
+//= require jquery.form
 //= require turbolinks
 //= require_tree .
 

@@ -41,6 +41,8 @@ gem 'aws-sdk'
 
 gem 'handlebars_assets'
 
+gem 'jquery-form-rails'
+
 
 # gem 'zurb-foundation'
 #gem 'foundation_rails_helper'

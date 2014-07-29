@@ -1,4 +1,10 @@
-<%= form_for @image do |f| %>
+<!-- <%= form_for @image do |f| %>
   <%= f.file_field :sharedimg %>
   <%= f.submit %>
+<% end %> -->
+
+<img id="thumb" src="/playground/images/icons/128px/zurb.png">
+
+<%= form_for(@image, :remote => true, :html => {:id => 'uploadForm', :multipart => true }) do |f| %>
+ Upload a file: <%= f.file_field :sharedimg, :label => false %>
 <% end %>
