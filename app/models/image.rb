@@ -10,7 +10,9 @@ class Image < ActiveRecord::Base
 
   # This method associates the attribute ":sharedimg" with a file attachment
   has_attached_file :sharedimg, styles: {
-    thumb: '200>x200>',
+
+    thumb: '200x200#',
+
     square: '400x400#',
     medium: '600x800>'
   }
