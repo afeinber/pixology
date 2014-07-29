@@ -1,4 +1,46 @@
-<%= form_for @image do |f| %>
-  <%= f.file_field :sharedimg %>
-  <%= f.submit %>
-<% end %>
+
+<div class="row black-banner">
+
+  <div class="small-12 large-12 columns">
+    <h1>Add a new image</h1>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="small-1 med-2 large-2 columns"></div>
+
+  <div class="small-10 small-offset-1 med-8 med-offset-2 large-6 large-offset-3 columns">
+    <%= form_for @image do |f| %>
+      <%= f.file_field :sharedimg %>
+      <%= f.text_area :caption %>
+  </div>
+
+  <div class="small-1 med-2 large-2 columns"></div>
+
+</div>
+<div class="row">
+
+  <div class="med-1 large-1 columns"></div>
+
+  <div class="small-10 small-offset-1 med-8 med-offset-2 large-6 large-offset-3 columns">
+  <hr>
+  <h4>Add some tags to describe your image</h4>
+  <div class="row" id="category">
+
+      <%= link_to_add_association 'Add a tag', f, :categories, :partial => 'categories/category_fields'%>
+      </div>
+      <br>
+<br>
+      
+      <%= f.submit 'Add image', :class => 'button expand' %>
+    <% end %>
+  </div>
+
+  <div class="med-2 large-2 columns"></div>
+
+</div>
+
+   
+
