@@ -13,9 +13,9 @@
           <p><%= image_tag @user.avatar.url(:thumb) %> </p>
           <% if user_signed_in? %>
             <% if current_user.follows.find_by_followee_id(@user.id).present? %>
-              <button class ='tiny alert' id ='unfollow-button'>UnFollow</button>
-            <% elsif %>
-              <button class ='tiny' id ='follow-button'>Follow</button>
+              <button class ='tiny alert' id ='unfollow-button' user-id = "<%=@user.id%>" follow-id = "<%= current_user.follows.find_by_followee_id(@user.id).id%>">UnFollow</button>
+            <% elsif current_user != @user %>
+              <button class ='tiny' id ='follow-button' user-id = "<%=@user.id%>">Follow</button>
             <% end %>
           <% end %>
           <h3>Blurb</h3>
