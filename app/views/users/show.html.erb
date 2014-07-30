@@ -26,6 +26,14 @@
             </div>
           <% end %>
         </div>
+        <div class="row collapse">
+          <div class="small-10 columns">
+            <input type="text" placeholder="Enter interest" id = "interest-form">
+          </div>
+          <div class="small-2 columns">
+            <button class="button postfix" id ="add-interest">Add</button>
+        </div>
+      </div>
       </div>
       <div class="content" id="my-images">
         <% @user.images.each do |image|%>
