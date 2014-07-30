@@ -1,3 +1,5 @@
+include ActionView::Helpers::DateHelper
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -15,4 +17,10 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => ActionController::Base.helpers.asset_path('books-thumb.jpg')
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  def self.member_length(user_create_time)
+    member_in_seconds = Time.now - user_create_time
+    member_in_seconds = member_in_seconds.to_i.seconds
+    time_ago_in_words(Time.now - member_in_seconds)
+  end
 end
