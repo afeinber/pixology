@@ -1267,7 +1267,7 @@ $sub-nav-active-cursor: default;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+ $topbar-title-font-size: rem-calc(10);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1508,7 +1508,7 @@ $sub-nav-active-cursor: default;
 .title-island {
   width: 600px;
   display: inline-block;
-  
+
   h1 {
     padding: 20px;
     margin: -50px;
@@ -1541,5 +1541,13 @@ $sub-nav-active-cursor: default;
 div.my-images {
   float: left;
   text-align: center;
+}
+
+.row-with-padding {
+  padding: rem-calc(30px);
+}
+nav h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
 }
 

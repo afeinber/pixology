@@ -20,11 +20,11 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
-    20.times { @image.categories.build }
+    @uploaded_image = Image.new
+    @uploaded_image.categories.build
   end
 
   def create
-
     @image = current_user.images.new(image_params)
 
     if @image.save
@@ -34,6 +34,18 @@ class ImagesController < ApplicationController
 
     else
       render action: 'new'
+    end
+  end
+
+  def update
+    @image = Image.find(params[:id])
+    @image.set_categories(image_params['categories_attributes'])
+    if @image.save
+      flash[:notice] = "Your image was sucessfully created"
+      redirect_to(@image)
+    else
+      flash.now[:alert] = "Your image was not able to be saved"
+      render :new
     end
   end
 
@@ -47,6 +59,6 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:sharedimg, :caption, categorized_images_attributes: [:id])
+    params.require(:image).permit(:sharedimg, :caption, categories_attributes: [:image_id, :description, :_destroy])
   end
 end
