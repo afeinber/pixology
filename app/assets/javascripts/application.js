@@ -23,7 +23,7 @@
 //= require js-routes
 
 $(document).ready(Akk.initialize);
-$(document).on('page:load', Akk.initialize());
+$(document).on('page:load', Akk.initialize);
 
 $('#category')
     .on('cocoon:before-insert', function(e,category_to_be_added) {
