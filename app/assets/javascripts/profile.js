@@ -78,7 +78,7 @@ $(document).ready(function() {
   },
   initializer: function(event){
     $('#my-images').on('click', '#delete-button',this.deleteImage.bind(this));
-    $('.my-interests').on('click', '#delete-button',this.deleteInterest.bind(this));
+    $('#interest-container').on('click', '#delete-button',this.deleteInterest.bind(this));
     $('#followings').on('click', '#unfollow-button',this.deleteFollow.bind(this));
     $('#add-interest').on('click',this.addCategory.bind(this));
 

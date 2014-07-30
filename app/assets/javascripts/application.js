@@ -22,7 +22,7 @@
 //= require js-routes
 
 
-$(document).on('page:load', Akk.initialize());
+$(document).on('page:load', Akk.initialize);
 
 //= require cocoon
 
