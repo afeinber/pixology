@@ -1,6 +1,11 @@
-<div class="nested-fields">
-  <div class="field">
-    <%= f.text_field :description %>
+<div class="nested-fields small-10 columns">
+  <div class="small-2 columns">
+    <%= link_to_remove_association f, class: 'button prefix left' do %>
+      <%= fa_icon 'minus' %>
+    <% end %>
   </div>
-  <%= link_to_remove_association 'remove', f %>
+  <div class="field small-10 columns">
+
+    <%= f.text_field :description, label: false, placeholder: 'Add a tag...' %>
+  </div>
 </div>

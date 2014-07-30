@@ -60,10 +60,16 @@ Akk.initialize = function() {
     complete: function(XMLHttpRequest) {
       $('#image-add-tags-form').attr('action', Routes.image_path(XMLHttpRequest.responseJSON.id));
       $('img#thumb').attr('src', XMLHttpRequest.responseJSON.thumb_url);
+      $('#image-add-tags-form .disabled').removeAttr('disabled');
+      $('#image-add-tags-form .disabled').removeClass('disabled');
     },
    });
   });
 };
+
+$('#categories').on('click', '.input-text', function(){
+  $(this).val('#');
+});
 Akk.createComment = function(target) {
 
   var commentPath = $(target).attr('action');
