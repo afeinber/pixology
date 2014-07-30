@@ -51,7 +51,7 @@ gem 'handlebars_assets'
 
 gem 'jquery-form-rails'
 
-
+gem 'mailboxer'
 # gem 'zurb-foundation'
 #gem 'foundation_rails_helper'
 

@@ -1466,7 +1466,10 @@ body {
     font-weight: 800;
   }
 }
-
+nav h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
+}
 #nav-dropdown {
   padding-right: 10px;
 }
@@ -1504,7 +1507,24 @@ body {
 }
 .photo-grid {
   display: inline-block;
-  background-color: #333333;
+  background-color: rgba(29, 33, 37, 0.81);
+
+  img {
+    margin-right: -4px;
+    padding: 0;
+  }
+}
+.notification-index {
+  background: rgba(29, 33, 37, 0.81);
+  min-height: 400px;
+  border-radius: 2px;
+  .noti-cell{
+    background: rgba(186, 218, 215, 1);
+    min-height: 50px;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 2px;
+  }
 }
 .search-banner{
   width: 100%;
@@ -1555,7 +1575,7 @@ padding-top: 12px;
 
 }
 .title-island {
-  width: 600px;
+  width: 596px;
   display: inline-block;
 
   h1 {
@@ -1563,7 +1583,8 @@ padding-top: 12px;
     margin: -50px;
     color: #fff;
     text-align: center;
-
+    font-weight: 900;
+    font-style: italic;
   }
 
 }
@@ -1599,16 +1620,14 @@ div.my-images {
 .row-with-padding {
   padding: rem-calc(30px);
 }
-nav h1 {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 40px;
-}
+
 .upvote.secondary {
   margin-bottom: 0px;
   margin-right: -4px;
   border-radius: 10px 10px 0 0;
   background-color: #84B0DA;
   color: white;
+
 
 }
 .downvote.secondary {
@@ -1644,3 +1663,17 @@ nav h1 {
   font-size: 0.6875rem;
 }
 
+.sticky-footer{
+  background: rgba(255, 255, 255, 0.74);
+  height: 150px;
+  font-size:24px;
+  margin-top: 60px;
+  text-align: right;
+  padding-right: 50px;
+  padding-top: 25px;
+
+  p{
+    padding-top: 5px;
+    font-size: 12px;
+  }
+}

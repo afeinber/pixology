@@ -1,0 +1,20 @@
+<div class="row notification-index">
+  <div class="medium-12 columns">
+
+  <% if current_user.mailbox.notifications.present? %>
+    <div class="noti-cell">
+      <div class="small-1 columns">
+        <p><i class="fa fa-flag"></i></p>
+      </div>
+      <div class="small-11 columns">
+        <% current_user.mailbox.notifications.each do |notification| %>
+          <p><%= notification.body %>
+          by <strong><%= notification.notified_object.username %>.</strong></p>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+      <h3>No new notifications. That's freedom.</h3>
+  <% end %>
+  </div>
+</div>
