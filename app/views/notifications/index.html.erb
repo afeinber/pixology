@@ -1,9 +1,6 @@
-<% @notifications.each do |notification| %>
-  <% if notification.comment.exists? %>
-    <%= notification.notified %> commented on your image.
-  <% elsif notification.favorite.exists? %>
-    <%= notification.notified %> favorited your image.
-  <% end %>
-<% end %>
+<% current_user.mailbox.notifications.each do |notification| %>
 
-<%= link_to "Dismiss", notification_delete_path(user: notified, notified: current_user, image: image), method: :delete, class: "button" if defined?(notified).present? %>
+  <%= notification.body %>
+  from <%= notification.notified_object.username %>
+
+<% end %>

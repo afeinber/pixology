@@ -13,6 +13,21 @@ class User < ActiveRecord::Base
   has_many :notifications, dependent: :destroy
   has_many :votes, dependent: :destroy
 
+  # mailboxer section
+  acts_as_messageable
+  # Returns the name of the user
+  def name
+   return self.username
+  end
+
+  def mailboxer_email(object)
+  #Check if an email should be sent for that object
+  #if true
+    return self.email
+  #if false
+  #return nil
+  end
+
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => ActionController::Base.helpers.asset_path('books-thumb.jpg')
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end
