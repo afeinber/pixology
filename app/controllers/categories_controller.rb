@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+
+  respond_to :json
+
   def index
     @categories = Category.all
     render json: @categories
@@ -6,14 +9,17 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    
   end
+
   def create
     @category = Category.find_or_create_by(category_params)
-    respond_to do |format|
-      format.html {redirect_to categories_url}
-      format.js
+
+    if @category.save
+      respond_with(@category)
+    else
+      respond_with(@category.errors)
     end
+
   end
 
   private
