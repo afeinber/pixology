@@ -1466,7 +1466,10 @@ body {
     font-weight: 800;
   }
 }
-
+nav h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
+}
 #nav-dropdown {
   padding-right: 10px;
 }
@@ -1504,11 +1507,23 @@ body {
 }
 .photo-grid {
   display: inline-block;
-  background-color: #333333;
+  background-color: rgba(29, 33, 37, 0.81);
 
   img {
     margin-right: -4px;
     padding: 0;
+  }
+}
+.notification-index {
+  background: rgba(29, 33, 37, 0.81);
+  min-height: 400px;
+  border-radius: 2px;
+  .noti-cell{
+    background: rgba(186, 218, 215, 1);
+    min-height: 50px;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 2px;
   }
 }
 .search-banner{
@@ -1605,10 +1620,7 @@ div.my-images {
 .row-with-padding {
   padding: rem-calc(30px);
 }
-nav h1 {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 40px;
-}
+
 
 .sticky-footer{
   background: rgba(255, 255, 255, 0.74);
