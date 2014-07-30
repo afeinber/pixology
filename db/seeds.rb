@@ -59,3 +59,8 @@ Interest.create(
   category_id: 2
   )
 
+#favorite
+Favorite.create(
+user_id: 1,
+image_id: 1
+  )
