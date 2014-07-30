@@ -2,6 +2,7 @@ var Akk = Akk || {};
 
 Akk.initialize = function() {
   $(document).foundation();
+  ProfileApp.initializer();
 
   $('#image-comments').on('click', '.expander', function(event) {
     event.preventDefault();
@@ -65,11 +66,19 @@ Akk.initialize = function() {
     },
    });
   });
+
+  $('#image-stats .upvote').click(Akk.makeVote);
+  $('#image-stats .downvote').click(Akk.makeVote);
+  $('#image-comments').on('click', '.upvote', Akk.makeVote);
+  $('#image-comments').on('click', '.downvote', Akk.makeVote);
+
+  //sets the category text field to a hash to encourage users to type hashtags
+  $('#categories').on('click', '.input-text', function(){
+    $(this).val('#');
+  });
 };
 
-$('#categories').on('click', '.input-text', function(){
-  $(this).val('#');
-});
+
 Akk.createComment = function(target) {
 
   var commentPath = $(target).attr('action');
@@ -80,4 +89,5 @@ Akk.createComment = function(target) {
   var newComment = new Akk.Comment(content,commentPath, target);
   newComment.remoteCreate();
 };
+
 

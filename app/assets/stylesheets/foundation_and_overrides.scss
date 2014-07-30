@@ -1603,5 +1603,44 @@ nav h1 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 40px;
 }
+.upvote.secondary {
+  margin-bottom: 0px;
+  margin-right: -4px;
+  border-radius: 10px 10px 0 0;
+  background-color: #84B0DA;
+  color: white;
 
+}
+.downvote.secondary {
+  border-radius: 0 0 10px 10px;
+  border-top: 1px solid white;
+  background-color: #84B0DA;
+  color: white;
+}
+.downvote {
+  border-radius: 0 0 10px 10px;
+  border-top: 1px solid white;
+  margin: 0px;
+}
+.upvote {
+  margin-bottom: -2px;
+  margin-right: -4px;
+  border-radius: 10px 10px 0 0;
+}
+.stacked-buttons {
+  padding: 15px 0px 0px 5px;
+  margin-top: -20px;
+
+}
+.vote.tiny {
+
+
+}
+#micro {
+  padding-top: 0.425rem;
+  padding-right: 0.225rem;
+  padding-bottom: 0.26875rem;
+  padding-left: 0.275rem;
+  font-size: 0.6875rem;
+}
 

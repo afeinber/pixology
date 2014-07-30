@@ -8,9 +8,14 @@ Rails.application.routes.draw do
 
   resources :images do
     resources :comments, only: [:create, :destroy]
+    resources :votes, only: [:create, :show]
   end
   resources :comments, only: [:create, :destroy] do
     resources :comments, only: [:create, :destroy]
+    resources :votes, only: [:create, :show]
   end
+
+  delete 'images/:image_id/votes', to: 'votes#destroy'
+  delete 'comments/:comment_id/votes', to: 'votes#destroy'
 
 end
