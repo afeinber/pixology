@@ -1,0 +1,9 @@
+<% @notifications.each do |notification| %>
+  <% if notification.comment.exists? %>
+    <%= notification.notified %> commented on your image.
+  <% elsif notification.favorite.exists? %>
+    <%= notification.notified %> favorited your image.
+  <% end %>
+<% end %>
+
+<%= link_to "Dismiss", notification_delete_path(user: notified, notified: current_user, image: image), method: :delete, class: "button" if defined?(notified).present? %>

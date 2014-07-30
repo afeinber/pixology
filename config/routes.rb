@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :interests, only:[:create, :destroy]
   resources :follows, only:[:create, :destroy]
   resources :users, only: [:show]
+  resources :notifications
 
   resources :images do
     resources :comments, only: [:create, :destroy]
