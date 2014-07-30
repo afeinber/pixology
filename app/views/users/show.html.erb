@@ -9,10 +9,15 @@
       <div class="content active" id="profile">
         <div class="panel callout radius text-center">
           <h1> <%= @user.username %> </h1>
-          <p>Has been a member for <%= @member_length %></p>
+          <small>Has been a member for <%= @member_length %></small>
           <p><%= image_tag @user.avatar.url(:thumb) %> </p>
-          <button class ='tiny' id ='follow-button'>Follow</button>
-          <button class ='tiny alert' id ='unfollow-button'>UnFollow</button>
+          <% if user_signed_in? %>
+            <% if current_user.follows.find_by_followee_id(@user.id).present? %>
+              <button class ='tiny alert' id ='unfollow-button'>UnFollow</button>
+            <% elsif %>
+              <button class ='tiny' id ='follow-button'>Follow</button>
+            <% end %>
+          <% end %>
           <h3>Blurb</h3>
           <p><%= @user.blurb %></p>
         </div>
