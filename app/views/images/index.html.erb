@@ -1,14 +1,16 @@
-<div class="small-12 large-12 columns">
-  <div class="photo-grid">
-    <% @images.first(6).each do |image| %>
-      <%= image_tag image.sharedimg.url(:thumb) %>
-    <% end %>
+<div class="row">
+  <div class="medium-12 columns">
+    <div class="photo-grid">
+      <% @images.first(6).each do |image| %>
+        <%= image_tag image.sharedimg.url(:thumb) %>
+      <% end %>
 
-    <div class="title-island"><h1>hot right now</h1></div>
+      <div class="title-island"><h1>hot right now</h1></div>
 
-    <% @images.offset(6).each do |image| %>
-      <%= image_tag image.sharedimg.url(:thumb) %>
-    <% end %>
+      <% @images.offset(6).each do |image| %>
+        <%= image_tag image.sharedimg.url(:thumb) %>
+      <% end %>
+    </div>
   </div>
 </div>
 

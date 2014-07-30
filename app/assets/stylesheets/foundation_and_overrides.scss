@@ -1505,6 +1505,11 @@ body {
 .photo-grid {
   display: inline-block;
   background-color: #333333;
+
+  img {
+    margin-right: -4px;
+    padding: 0;
+  }
 }
 .search-banner{
   width: 100%;
@@ -1555,7 +1560,7 @@ padding-top: 12px;
 
 }
 .title-island {
-  width: 600px;
+  width: 596px;
   display: inline-block;
 
   h1 {
@@ -1563,7 +1568,8 @@ padding-top: 12px;
     margin: -50px;
     color: #fff;
     text-align: center;
-
+    font-weight: 900;
+    font-style: italic;
   }
 
 }
