@@ -45,6 +45,7 @@ $(document).ready(function() {
     })
     .done(this.addInterest.bind(this))
     .done(this.appendInterest.bind(this));
+    $("#interest-form").val('');
     event.preventDefault();
   },
   addInterest: function(category){
@@ -59,8 +60,11 @@ $(document).ready(function() {
     .done();
     event.preventDefault();
   },
-  appendInterest: function(category){
+  appendInterest: function(interest){
     category = category.category.description;
+    var button = "<p><button class ='tiny alert' id ='delete-button'>Delete</button></p>";
+    var div = $('div').addClass('my-interests').attr('interest-id', interest.id);
+
     //append interest to end of interest list.
     event.preventDefault();
   },
