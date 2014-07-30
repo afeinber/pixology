@@ -13,14 +13,14 @@
           <h3>Blurb</h3>
           <p><%= @user.blurb %></p>
         </div>
-        <div class="panel callout radius text-center">
+        <div class="panel callout radius text-center" id ="interest-container">
           <h3> Interests </h3>
           <% @user.interests.each do |interest|%>
             <div class = 'my-interests' interest-id = "<%= interest.id %>">
               <p><%= interest.category.description %></p>
               <% if user_signed_in? %>
                 <% if @user.username == current_user.username%>
-                  <p><button class ='tiny alert' id ='delete-button'>Delete</button></p>
+                  <button class ='tiny alert' id ='delete-button'>Delete</button>
                 <% end %>
               <% end %>
             </div>

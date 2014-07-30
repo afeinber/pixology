@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  ProfileApp.initializer();
+
+});
+
   var ProfileApp = {
 
   deleteImage: function(event){
@@ -14,13 +18,13 @@ $(document).ready(function() {
   },
 
   deleteInterest: function(event){
-    Id = event.target.parentElement.parentElement.getAttribute('interest-id');
+    Id = event.target.parentElement.getAttribute('interest-id');
     $.ajax({
       type: "DELETE",
       url: Routes.interest_path(Id),
       dataType: 'json'
     })
-    .done(event.target.parentElement.parentElement.remove());
+    .done(event.target.parentElement.remove());
     event.preventDefault();
   },
 
@@ -57,27 +61,27 @@ $(document).ready(function() {
       data: requestObj,
       dataType: 'json'
     })
-    .done();
+    .done(this.appendInterestId.bind(this));
     event.preventDefault();
   },
-  appendInterest: function(interest){
-    category = category.category.description;
-    var button = "<p><button class ='tiny alert' id ='delete-button'>Delete</button></p>";
-    var div = $('div').addClass('my-interests').attr('interest-id', interest.id);
-
-    //append interest to end of interest list.
+  appendInterest: function(category){
+    var button = "<button class ='tiny alert' id ='delete-button'>Delete</button>";
+    var div = $('<div>').addClass('my-interests');
+    var description = $('<p>').text(category.category.description);
+    var interestDiv = div.append(description,button);
+    $('#interest-container').append(interestDiv);
+    event.preventDefault();
+  },
+  appendInterestId: function(interest){
+    $('.my-interests').last().attr('interest-id',interest.id);
     event.preventDefault();
   },
   initializer: function(event){
-    $('#my-images').on('click', '#delete-button',this.deleteImage);
-    $('.my-interests').on('click', '#delete-button',this.deleteInterest);
-    $('#followings').on('click', '#unfollow-button',this.deleteFollow);
+    $('#my-images').on('click', '#delete-button',this.deleteImage.bind(this));
+    $('.my-interests').on('click', '#delete-button',this.deleteInterest.bind(this));
+    $('#followings').on('click', '#unfollow-button',this.deleteFollow.bind(this));
     $('#add-interest').on('click',this.addCategory.bind(this));
 
 
   }
 };
-
-  ProfileApp.initializer();
-
-});
