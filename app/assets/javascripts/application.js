@@ -22,7 +22,7 @@
 
 //= require js-routes
 
-
+$(document).ready(Akk.initialize);
 $(document).on('page:load', Akk.initialize());
 
 $('#category')

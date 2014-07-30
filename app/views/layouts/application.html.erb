@@ -11,6 +11,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -20,7 +21,7 @@
     <ul class="title-area">
       <li class="name">
 
-        <h1 class="nav-title"><a href="#">pixology</a></h1>
+        <h1 class="nav-title"><%= link_to 'pixology', root_path %></h1>
 
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
@@ -72,6 +73,6 @@
       </div>
   <%= display_flash_messages %>
     <%= yield %>
-    <%= javascript_include_tag "application" %>
+
   </body>
 </html>
