@@ -16,6 +16,7 @@
 //= require foundation
 //= require handlebars.runtime
 //= require jquery.form
+//= require cocoon
 //= require turbolinks
 //= require_tree .
 
@@ -23,17 +24,6 @@
 
 
 $(document).on('page:load', Akk.initialize());
-
-//= require cocoon
-
-// $(document).on("page:fetch", function(){
-//   $('.content').on('click', function (event) {
-//     event.preventDefault();
-
-//   });
-// });
-
-
 
 $('#category')
     .on('cocoon:before-insert', function(e,category_to_be_added) {

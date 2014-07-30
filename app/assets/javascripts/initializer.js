@@ -15,6 +15,13 @@ Akk.initialize = function() {
     }
   });
 
+  $('.expander').on('click', function(event) {
+    event.preventDefault();
+    $(this).parents('.accordion-head').siblings('.content').toggleClass('active');
+    $(this).children('i').toggleClass('fa-angle-double-down');
+    $(this).children('i').toggleClass('fa-angle-double-up');
+  });
+
   $('#image-comments').on('click', '.comment-reply', function(event){
     event.preventDefault();
     $($(this).parents('.panel-footer')[0]).siblings('.comment-comment-form').toggle();
@@ -48,18 +55,21 @@ Akk.initialize = function() {
    $(this).parent().ajaxSubmit({
     beforeSubmit: function(a,f,o) {
      o.dataType = 'json';
+     $('img#thumb').attr('src', '/assets/C36.gif');
     },
     complete: function(XMLHttpRequest) {
-     // XMLHttpRequest.responseText will contain the URL of the uploaded image.
-     // Put it in an image element you create, or do with it what you will.
-     // For example, if you have an image elemtn with id "my_image", then
-     //  $('#my_image').attr('src', XMLHttpRequest.responseText);
-     // Will set that image tag to display the uploaded image.
-     $('img#thumb').attr('src', XMLHttpRequest.responseJSON.thumb_url);
+      $('#image-add-tags-form').attr('action', Routes.image_path(XMLHttpRequest.responseJSON.id));
+      $('img#thumb').attr('src', XMLHttpRequest.responseJSON.thumb_url);
+      $('#image-add-tags-form .disabled').removeAttr('disabled');
+      $('#image-add-tags-form .disabled').removeClass('disabled');
     },
    });
   });
 };
+
+$('#categories').on('click', '.input-text', function(){
+  $(this).val('#');
+});
 Akk.createComment = function(target) {
 
   var commentPath = $(target).attr('action');

@@ -1267,7 +1267,9 @@ $topbar-height: 50px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
+
 $topbar-title-font-size: rem-calc(28);
+
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: rgba(178,178,182, 0.7);
@@ -1593,4 +1595,13 @@ div.my-images {
   letter-spacing: 0.0325em;
 
 }
+
+.row-with-padding {
+  padding: rem-calc(30px);
+}
+nav h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
+}
+
 

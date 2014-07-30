@@ -2,17 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  resources :images
-
   resources :interests, only:[:create, :destroy]
   resources :follows, only:[:create, :destroy]
   resources :users, only: [:show]
 
   resources :images do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
-  resources :comments do
-    resources :comments
+  resources :comments, only: [:create, :destroy] do
+    resources :comments, only: [:create, :destroy]
   end
 
 end
