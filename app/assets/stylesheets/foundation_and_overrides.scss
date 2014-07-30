@@ -66,7 +66,7 @@ $include-html-global-classes: $include-html-classes;
 
 
 // We use these to control various global styles
-// $body-bg: #fff;
+$body-bg: #333;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
@@ -87,7 +87,7 @@ $body-font-weight: $font-weight-normal;
 
 // We use these as default colors throughout
 
-// $primary-color: #008CBA;
+  $primary-color: #122A41;
 
 //$primary-color: #008CBA;
 
@@ -272,8 +272,8 @@ $column-gutter: rem-calc(0);
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: #efefef  ;
-// $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
+$accordion-navigation-bg-color: background: rgba(133, 143, 148, 0.53);
+$accordion-navigation-hover-bg-color: #fff;
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: #222;
 // $accordion-navigation-font-size: rem-calc(16);
@@ -1258,19 +1258,19 @@ $sub-nav-active-cursor: default;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #fff;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 50px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-font-size: rem-calc(28);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
+$topbar-dropdown-bg: #122A41;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
 // $topbar-dropdown-link-weight: $font-weight-normal;
@@ -1279,12 +1279,12 @@ $sub-nav-active-cursor: default;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
-// $topbar-link-color-active-hover: #fff;
+$topbar-link-color: #000;
+$topbar-link-color-hover: #000;
+$topbar-link-color-active: #000;
+$topbar-link-color-active-hover: #000;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(18);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: #555555;
@@ -1413,6 +1413,9 @@ $sub-nav-active-cursor: default;
 
 
 }
+body {
+  background-image: url('/assets/x.png');
+}
 .thumb-row {
   position: relative;
   left: 2px;
@@ -1420,13 +1423,13 @@ $sub-nav-active-cursor: default;
 .accordion-head {
   width: 100%;
   height: 57px;
-  background: #efefef;
+  background: rgba(133, 143, 148, 0.53);
   padding: 1rem;
   line-height: 10px;
 
 }
 .accordion-head:hover {
-  background: #e3e3e3;
+  background: #fff;
 }
 .accordion-wrapper {
   width: 33%;
@@ -1465,11 +1468,7 @@ $sub-nav-active-cursor: default;
 #nav-dropdown {
   padding-right: 10px;
 }
-#search-bar-nav {
-  position: relative;
-  left: 1000px;
 
-}
 #image-comments {
   background: #efefef;
   padding: 50px 100px 50px 100px;
@@ -1505,17 +1504,61 @@ $sub-nav-active-cursor: default;
   display: inline-block;
   background-color: #333333;
 }
+.search-banner{
+  width: 100%;
+  height: 80px;
+  background-color: #0D2031;
+  margin-bottom: 20px;
+  a {
+    background-color: #122A41;
+    height: 36px;
+  }
+  #search-button{
+    font-size: 18px;
+  }
+  input{
+    background: #092E50;
+    border: 0px solid #fff;
+    height: 36x;
+    font-size: 18px;
+  }
+  input:focus
+  {
+    background-color: #164066;
+    box-shadow: none;
+  }
+  ::-webkit-input-placeholder {
+     color: #265681;
+     font-style: italic;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+     color: #265681;
+     font-style: italic;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: #265681;
+     font-style: italic;
+  }
+  :-ms-input-placeholder {
+     color: #265681;
+     font-style: italic;
+  }
+
+}
+#search-bar-nav {
+padding-top: 10px;
+
+}
 .title-island {
   width: 600px;
   display: inline-block;
-  
+
   h1 {
     padding: 20px;
     margin: -50px;
     color: #fff;
     text-align: center;
-    font-weight: 800;
-    font-style: italic;
+
   }
 
 }
@@ -1541,5 +1584,10 @@ $sub-nav-active-cursor: default;
 div.my-images {
   float: left;
   text-align: center;
+}
+.nav-title{
+  font-family: 'Arvo', serif;
+  letter-spacing: 0.0325em;
+
 }
 

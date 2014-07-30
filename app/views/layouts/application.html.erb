@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Doodlr</title>
+    <title>pixology</title>
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -16,7 +17,7 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#">Doodlr</a></h1>
+        <h1 class="nav-title"><a href="#">pixology</a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -46,20 +47,25 @@
       </ul>
 
       <!-- Left Nav Section -->
-      <ul class="left">
+
+    </section>
+  </nav>
+  <div class="top-bar search-banner">
+  <div class="small-10 small-centered medium-6 medium-centered columns">
+  <ul class="center">
         <li class="has-form" id="search-bar-nav">
           <div class="row collapse">
-            <div class="large-8 small-9 columns">
-              <input type="text" placeholder="Find Images">
+            <div class="large-9 small-10 columns">
+              <input type="text" placeholder="Search the collection...">
             </div>
-            <div class="large-4 small-3 columns">
-              <a href="#" class="alert button expand">Search</a>
+            <div class="large-3 small-2 columns">
+              <a href="#" class="button expand" id="search-button"><i class="fa fa-search"></i></a>
             </div>
           </div>
         </li>
       </ul>
-    </section>
-  </nav>
+      </div>
+      </div>
   <%= display_flash_messages %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
