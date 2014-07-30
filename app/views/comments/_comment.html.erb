@@ -1,6 +1,16 @@
-<div class="individual-comment <%= 'nested-comment' if comment.commentable_type == 'Comment'%>">
+<div class="individual-comment <%= 'nested-comment' if comment.commentable_type == 'Comment'%>" data-id='<%= comment.id %>'>
   <div class="panel">
-    <p><%= comment.content %></p>
+    <div class="row">
+      <div class="small-8 columns">
+        <p><%= comment.content %></p>
+      </div>
+      <div class="small-4 columns">
+        <div class="stacked-buttons text-right">
+          <a href="#" class="button <%= vote_class(comment, true) %> vote upvote" id="micro"><%= fa_icon 'arrow-up' %></a> <br />
+          <a href="#" class="button <%= vote_class(comment, false) %> vote downvote" id="micro"><%= fa_icon 'arrow-down' %></a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="panel-footer">
     <div class="medium-10 columns">

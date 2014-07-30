@@ -1,4 +1,6 @@
-  var ProfileApp = {
+
+var ProfileApp = {
+
 
   deleteImage: function(event){
     Id = event.target.parentElement.parentElement.getAttribute('image-id');
@@ -124,5 +126,7 @@
     $('#profile').on('click','#unfollow-button',this.change);
 
 
+
   }
 };
+
