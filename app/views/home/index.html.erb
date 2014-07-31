@@ -8,6 +8,8 @@
             <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
             <div class="img-title">
               <%= image.caption %>
+              <p>Added by <%= link_to image.user.username, user_path(image.user) %><br><%= time_ago_in_words(image.created_at) %> ago</p>
+              <h3><i class="fa fa-bullseye"></i></h3>
             </div>
           </div>
         <% end %>
@@ -19,7 +21,7 @@
           <div class="gallery-item">
             <%= image_tag image.sharedimg.url(:thumb) %>
             <div class="img-title">
-              Image Title
+              <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
             </div>
           </div>
         <% end %>
@@ -51,6 +53,7 @@
                   <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
                   <div class="img-title">
                     <%= image.caption %>
+                    <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
                   </div>
                 </div>
           <% end %>
@@ -81,6 +84,7 @@
                     <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
                     <div class="img-title">
                     <h5><%= image.caption %> </h5>
+                    <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
                     </div>
                   </div>
                 <% end %>
@@ -109,7 +113,10 @@
                 <div class="gallery-item">
                   <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
                   <div class="img-title">
-                    <%= image.caption %>
+                    <h3><%= image.caption %></h3>
+
+                    <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
+                    <h3><i class="fa fa-camera-retro"></i></h3>
                   </div>
                 </div>
           <% end %>
@@ -128,6 +135,7 @@
             <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
             <div class="img-title">
               <%= image.caption %>
+              <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
             </div>
           </div>
         <% end %>
@@ -139,7 +147,7 @@
           <div class="gallery-item">
             <%= image_tag image.sharedimg.url(:thumb) %>
             <div class="img-title">
-              Image Title
+              <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
             </div>
           </div>
         <% end %>

@@ -1706,18 +1706,31 @@ div.my-images {
     margin: 0;
     height: 200px;
     width: 200px;
-    text-align: center;
+
     /*opacity: 0;*/
     display: none; /* comment this out for CSS hover */
-    background: rgba(29, 33, 37, 0.81);
+    background: rgba(29, 33, 37, 0.87);
     /*transition: all 0.5s ease;*/
-}
+    padding-left: 15px;
 
-    .img-title h5 {
-        position: absolute;
+    p {
+        position: relative;
         color: #fff;
         top: 33%;
-        width: 100%;
+        width: 80%;
+        text-align: left;
+        font-size: 13px;
+        letter-spacing: 0.0425em;
+      }
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      h3 {
+        position: relative;
+text-align: center;
+        color: #fff;
 
+      }
     }
 
