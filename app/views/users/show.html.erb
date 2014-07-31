@@ -6,8 +6,6 @@
       <li class="tab-title profile-tab-wrapper"><a href="#my-favorites">Favorites (<%=@user.favorites.length%>)</a></li>
       <li class="tab-title profile-tab-wrapper"><a href="#followings">Followings (<%=@user.follows.length%>)</a></li>
       <li class="tab-title profile-tab-wrapper"><a href="#followers">Followers (<%=@user.inverse_follows.length%>)</a></li>
-      <li class="tab-title profile-tab-wrapper"><a href="#notification">Notifications</a></li>
-    </ul>
 
     <div class="tabs-content">
       <div class="content active" id="profile">
@@ -69,7 +67,7 @@
             <%= link_to image_tag(favorite.image.sharedimg.url(:thumb)), favorite.image %>
             <% if user_signed_in? %>
               <%if @user.username == current_user.username%>
-                <p><button class ='alert' id ='unfavorite-button'>Unfavorite</button></p>
+                <p><button class ='alert profile-unfavorite' id ='unfavorite-button'><i class="fa fa-heart-o"></i></button></p>
               <% end %>
             <% end %>
           </div>
