@@ -11,7 +11,7 @@ class Search
 
   def search_database
     if search_type == 'Users'
-      User.where('username ~* ?', /\A.*#{query}.*\Z/)
+      User.where('username ILIKE ?', "%#{query}%")
     else
       cats = Category.where('description ILIKE ?', query)
       images = []

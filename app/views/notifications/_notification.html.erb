@@ -1,0 +1,15 @@
+<div class="noti-cell" data-id="<%= notification.id %>">
+  <div class="small-1 columns">
+    <p><i class="fa fa-flag"></i></p>
+  </div>
+  <div class="small-10 columns">
+    <p>
+      Your <strong><%= link_to name_for_notification_display(notification.notified_object), object_for_notification_display(notification.notified_object) %></strong> <%= notification.body %>
+      by <strong><%= link_to notification.notified_object.user.username, notification.notified_object.user %>
+      .</strong>
+    </p>
+  </div>
+  <div class="small-1 columns">
+    <a href="#" class="button tiny alert notification-delete"><%= fa_icon 'times' %></a>
+  </div>
+</div>

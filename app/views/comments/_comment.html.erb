@@ -14,7 +14,7 @@
   </div>
   <div class="panel-footer">
     <div class="medium-10 columns">
-      <p><strong><%=comment.user.username%></strong><%= time_ago_in_words(comment.created_at) %> ago</p>
+      <p><strong><%=comment.user.username%></strong> <%= time_ago_in_words(comment.created_at) %> ago</p>
     </div>
     <div class="medium-2 columns">
       <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'angle-double-down' %></a></p>

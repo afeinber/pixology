@@ -16,14 +16,15 @@
 
 
       <div class="title-island"><h1>hot right now</h1></div>
-
-        <% @hot_right_now[5,6].each do |image| %>
-          <div class="gallery-item">
-            <%= image_tag image.sharedimg.url(:thumb) %>
-            <div class="img-title">
-              <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
+        <% if @hot_right_now[5,6].present? %>
+          <% @hot_right_now[5,6].each do |image| %>
+            <div class="gallery-item">
+              <%= image_tag image.sharedimg.url(:thumb) %>
+              <div class="img-title">
+                <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -4,7 +4,6 @@ class SearchesController < ApplicationController
     @search =  Search.new(search_params)
     if @search.search_type == 'Users'
       @users = @search.search_database
-      binding.pry
       @tag = @search.query
       render 'users/index'
     else
