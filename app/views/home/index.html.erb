@@ -47,14 +47,15 @@
 
 
       <div class="title-island"><h1>fresh pics</h1></div>
-
-        <% @fresh_pics[5,6].each do |image| %>
-          <div class="gallery-item">
-            <%= image_tag image.sharedimg.url(:thumb) %>
-            <div class="img-title">
-              <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
+        <% if @fresh_pics[5,6].present? %>
+          <% @fresh_pics[5,6].each do |image| %>
+            <div class="gallery-item">
+              <%= image_tag image.sharedimg.url(:thumb) %>
+              <div class="img-title">
+                <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
