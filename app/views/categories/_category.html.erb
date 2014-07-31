@@ -1,0 +1,32 @@
+<div class="home-spacer"></div>
+<!-- Start Accordion section !!!!!!!!!!!!!-->
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <div class="accordion-head">
+      <div class="accordion-wrapper accordion-left-wrapper">
+        <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
+      </div>
+      <div class="accordion-wrapper accordion-center-wrapper">
+        <strong><a href="#" class="accordion-link accordion-center"><%= category.description %></a></strong>
+      </div>
+      <div class="accordion-wrapper accordion-right-wrapper">
+        <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
+      </div>
+    </div>
+    <div id="panel1" class="content">
+      <div class="row photo-grid">
+        <div class="wrapper clearfix">
+          <% category.accordion_five.each do |image| %>
+            <div class="gallery-item">
+              <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+              <div class="img-title">
+                <%= image.caption %>
+                <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </dd>
+</dl>

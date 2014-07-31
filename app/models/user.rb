@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :follows, dependent: :destroy
   has_many :inverse_follows, class_name: 'Follow', foreign_key: 'followee_id', dependent: :destroy
   has_many :interests, dependent: :destroy
+  has_many :categories, through: :interests
   has_many :notifications, dependent: :destroy
   has_many :votes, dependent: :destroy
 

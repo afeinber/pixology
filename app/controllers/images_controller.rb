@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
 
   respond_to :html, :json
 
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def index
     @images = Image.order(created_at: :desc)
@@ -48,7 +48,7 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    @image = Image.find(params[:id])
+    @image = current_user.images.find(params[:id])
     @image.destroy
 
     head :no_content

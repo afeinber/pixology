@@ -3,7 +3,7 @@
     <div class="photo-grid">
 
       <div class="wrapper clearfix">
-        <% @images.limit(6).each do |image| %>
+        <% @hot_right_now.first(6).each do |image| %>
           <div class="gallery-item">
             <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
             <div class="img-title">
@@ -17,7 +17,7 @@
 
       <div class="title-island"><h1>hot right now</h1></div>
 
-        <% @images.offset(6).limit(5).each do |image| %>
+        <% @hot_right_now[5,6].each do |image| %>
           <div class="gallery-item">
             <%= image_tag image.sharedimg.url(:thumb) %>
             <div class="img-title">
@@ -28,109 +28,14 @@
       </div>
     </div>
 
-<div class="home-spacer"></div>
+    <%= render @categories %>
 <!-- Start Accordion section !!!!!!!!!!!!!-->
-    <dl class="accordion" data-accordion>
-      <dd class="accordion-navigation">
-        <div class="accordion-head">
-          <div class="accordion-wrapper accordion-left-wrapper">
-            <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
-          </div>
-          <div class="accordion-wrapper accordion-center-wrapper">
-           <strong><a href="#" class="accordion-link accordion-center">#bill nye</a></strong>
-          </div>
-          <div class="accordion-wrapper accordion-right-wrapper">
-            <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
-          </div>
-        </div>
-        <div id="panel1" class="content">
-          <!-- <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 imagelist"> -->
-            <div class="row photo-grid">
 
-            <div class="wrapper clearfix">
-              <% @images.limit(5).each do |image| %>
-                <div class="gallery-item">
-                  <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
-                  <div class="img-title">
-                    <%= image.caption %>
-                    <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
-                  </div>
-                </div>
-          <% end %>
-          </div>
-          </div>
-          <!-- </ul> -->
-        </div>
-      </dd>
-      <div class="home-spacer"></div>
-      <dd class="accordion-navigation">
-        <div class="accordion-head">
-          <div class="accordion-wrapper accordion-left-wrapper">
-            <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
-          </div>
-          <div class="accordion-wrapper accordion-center-wrapper">
-            <strong><a href="#" class="accordion-link accordion-center">#such-pictures</a></strong>
-          </div>
-          <div class="accordion-wrapper accordion-right-wrapper">
-            <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
-          </div>
-        </div>
-        <div id="panel2" class="content ">
-          <div class="photo-grid">
-
-              <div class="wrapper clearfix">
-                <% @images.limit(5).each do |image| %>
-                  <div class="gallery-item">
-                    <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
-                    <div class="img-title">
-                    <h5><%= image.caption %> </h5>
-                    <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-        </div>
-      </dd>
-      <div class="home-spacer"></div>
-      <dd class="accordion-navigation">
-        <div class="accordion-head">
-          <div class="accordion-wrapper accordion-left-wrapper">
-            <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
-          </div>
-          <div class="accordion-wrapper accordion-center-wrapper">
-            <strong><a href="#" class="accordion-link accordion-center">#puppies</a></strong>
-          </div>
-          <div class="accordion-wrapper accordion-right-wrapper">
-            <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
-          </div>
-        </div>
-        <div id="panel3" class="content">
-          <div class="row photo-grid">
-
-            <div class="wrapper clearfix">
-              <% @images.limit(5).each do |image| %>
-                <div class="gallery-item">
-                  <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
-                  <div class="img-title">
-                    <h3><%= image.caption %></h3>
-
-                    <p>Added by <strong><%= image.user.username %></strong> <%= time_ago_in_words(image.created_at) %> ago.</p>
-                    <h3><i class="fa fa-camera-retro"></i></h3>
-                  </div>
-                </div>
-          <% end %>
-          </div>
-          </div>
-          <!-- </ul> -->
-        </div>
-      </dd>
-    </dl>
     <div class="home-spacer"></div>
     <div class="photo-grid">
 
       <div class="wrapper clearfix">
-        <% @images.limit(6).each do |image| %>
+        <% @fresh_pics.first(6).each do |image| %>
           <div class="gallery-item">
             <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
             <div class="img-title">
@@ -143,7 +48,7 @@
 
       <div class="title-island"><h1>fresh pics</h1></div>
 
-        <% @images.offset(6).limit(5).each do |image| %>
+        <% @fresh_pics[5,6].each do |image| %>
           <div class="gallery-item">
             <%= image_tag image.sharedimg.url(:thumb) %>
             <div class="img-title">
