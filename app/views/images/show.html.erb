@@ -1,5 +1,5 @@
-
-<div class="row">
+<%= @image.caption %>
+<p>Added by <strong><%= @image.user.username %></strong> <%= time_ago_in_words(@image.created_at) %> ago.</p>
   <div class="medium-8 medium-centered text-center columns">
     <%= image_tag @image.sharedimg.url(:medium) %>
   </div>

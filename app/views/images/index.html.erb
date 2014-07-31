@@ -2,7 +2,7 @@
   <div class="medium-12 columns">
     <div class="photo-grid">
       <% @images.first(6).each do |image| %>
-        <%= image_tag image.sharedimg.url(:thumb) %>
+        <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
       <% end %>
 
       <div class="title-island"><h1><%= @tag %></h1></div>
