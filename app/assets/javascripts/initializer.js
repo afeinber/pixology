@@ -14,6 +14,10 @@ Akk.initialize = function() {
         $(this).find('.img-title').fadeOut(100);
   });
 
+  $('.smile-tab').click( function() {
+        $('.search-banner').slideToggle( "slow" );
+  });
+
   $('#image-comments').on('click', '.expander', function(event) {
     event.preventDefault();
     $(this).parents('.accordion-head').siblings('.content').toggleClass('active');
