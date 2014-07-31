@@ -30,7 +30,7 @@ class Image < ActiveRecord::Base
         reverse.
         first(12)
     if imgs.count < 12
-      imgs << self.first(12 - imgs.count)
+      imgs += self.first(12 - imgs.count)
     end
     imgs
   end
