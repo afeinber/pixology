@@ -1463,14 +1463,20 @@ body {
 
 }
 .smile-tab{
-border-radius: 0px 0px 200px 200px;
+  color: #fff;
+  border: 0px solid #000000;
+  background-color: #7398d1;
+  height: 45px;
+  width: 65px;
+  margin-left: 73px;
+  margin-bottom: 5px;
+  font-size: 19px;
+  padding-top: 8px;
+  text-align: center;
+  border-radius: 0px 0px 200px 200px;
 -moz-border-radius: 0px 0px 200px 200px;
 -webkit-border-radius: 0px 0px 200px 200px;
-border: 0px solid #000000;
-background-color: #7398d1;
-height: 50px;
-width: 80px;
-margin-left: 90px;
+
 
 }
 .black-banner {
@@ -1632,8 +1638,8 @@ div.my-images {
   text-align: center;
 }
 .nav-title{
-  font-family: 'Arvo', serif;
-  letter-spacing: 0.0325em;
+  line-height: 83px;
+  padding-left: 15px;
 
 }
 
