@@ -9,7 +9,8 @@
             <div class="img-title">
               <%= image.caption %>
               <p>Added by <%= link_to image.user.username, user_path(image.user) %><br><%= time_ago_in_words(image.created_at) %> ago</p>
-              <h3><i class="fa fa-bullseye"></i></h3>
+              <%= link_to 'View', image %>
+
             </div>
           </div>
         <% end %>
