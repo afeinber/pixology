@@ -1,5 +1,18 @@
 <div class="row homepage">
   <div class="medium-12 columns">
+
+    <div class="photo-grid">
+      <% @images.limit(6).each do |image| %>
+        <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+      <% end %>
+
+      <div class="title-island"><h1>hot right now</h1></div>
+
+      <% @images.offset(6).limit(5).each do |image| %>
+        <%= image_tag image.sharedimg.url(:thumb) %>
+      <% end %>
+    </div>
+
     <dl class="accordion" data-accordion>
       <dd class="accordion-navigation">
         <div class="accordion-head">
