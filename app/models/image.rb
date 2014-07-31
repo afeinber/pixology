@@ -36,6 +36,6 @@ class Image < ActiveRecord::Base
   end
 
   def self.rand_images
-    imgs = imgs.find(Image.ids.sample(12))
+    self.find(Image.ids.sample(12))
   end
 end
