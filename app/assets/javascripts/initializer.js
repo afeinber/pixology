@@ -5,6 +5,9 @@ Akk.initialize = function() {
 
    ProfileApp.initializer();
 
+
+
+
   $('#image-comments').on('click', '.expander', function(event) {
     event.preventDefault();
     $(this).parents('.accordion-head').siblings('.content').toggleClass('active');

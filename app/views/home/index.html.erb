@@ -1,16 +1,30 @@
 <div class="row homepage">
   <div class="medium-12 columns">
-
     <div class="photo-grid">
-      <% @images.limit(6).each do |image| %>
-        <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
-      <% end %>
+
+      <div class="wrapper clearfix">
+        <% @images.limit(6).each do |image| %>
+          <div class="gallery-item">
+            <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+            <div class="img-title">
+              <h5><%= image.caption %> </h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
       <div class="title-island"><h1>hot right now</h1></div>
 
-      <% @images.offset(6).limit(5).each do |image| %>
-        <%= image_tag image.sharedimg.url(:thumb) %>
-      <% end %>
+      <div class="wrapper clearfix">
+        <% @images.offset(6).limit(5).each do |image| %>
+          <div class="gallery-item">
+            <%= image_tag image.sharedimg.url(:thumb) %>
+            <div class="img-title">
+              <h5>Image Title</h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
 
     <dl class="accordion" data-accordion>
@@ -30,10 +44,16 @@
           <!-- <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 imagelist"> -->
             <div class="photo-grid">
 
-              <% @images.limit(5).each do |image| %>
-                <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
-              <% end %>
-
+              <div class="wrapper clearfix">
+                <% @images.limit(5).each do |image| %>
+                  <div class="gallery-item">
+                    <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+                    <div class="img-title">
+                    <h5><%= image.caption %> </h5>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </div>
           <!-- </ul> -->
         </div>
@@ -41,16 +61,65 @@
       <dd class="accordion-navigation">
         <a href="#panel2">Accordion 2</a>
         <div id="panel2" class="content ">
-          Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <div class="photo-grid">
+
+              <div class="wrapper clearfix">
+                <% @images.limit(5).each do |image| %>
+                  <div class="gallery-item">
+                    <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+                    <div class="img-title">
+                    <h5><%= image.caption %> </h5>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
         </div>
       </dd>
       <dd class="accordion-navigation">
         <a href="#panel3">Accordion 3</a>
         <div id="panel3" class="content">
-          Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <div class="photo-grid">
+
+              <div class="wrapper clearfix">
+                <% @images.limit(5).each do |image| %>
+                  <div class="gallery-item">
+                    <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+                    <div class="img-title">
+                    <h5><%= image.caption %> </h5>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
         </div>
       </dd>
     </dl>
+<div class="photo-grid">
 
+      <div class="wrapper clearfix">
+        <% @images.limit(6).each do |image| %>
+          <div class="gallery-item">
+            <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+            <div class="img-title">
+              <h5><%= image.caption %> </h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="title-island"><h1>hot right now</h1></div>
+
+      <div class="wrapper clearfix">
+        <% @images.offset(6).limit(5).each do |image| %>
+          <div class="gallery-item">
+            <%= image_tag image.sharedimg.url(:thumb) %>
+            <div class="img-title">
+              <h5>Image Title</h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

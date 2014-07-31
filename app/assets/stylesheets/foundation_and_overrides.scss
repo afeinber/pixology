@@ -1514,7 +1514,6 @@ nav h1 {
   background-color: #000;
 
   img {
-    margin-right: -4px;
     padding: 0;
   }
 }
@@ -1581,6 +1580,7 @@ padding-top: 12px;
 .title-island {
   width: 596px;
   display: inline-block;
+  float: left;
 
   h1 {
     padding: 20px;
@@ -1590,6 +1590,7 @@ padding-top: 12px;
     font-weight: 900;
     font-style: italic;
     font-size: 60px;
+
   }
 
 }
@@ -1682,3 +1683,34 @@ div.my-images {
     font-size: 12px;
   }
 }
+
+// Hover stuff
+
+.gallery-item {
+  float: left;
+}
+
+.gallery-item:hover .img-title {
+    /*opacity: 1;*/
+}
+
+.img-title {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    /*opacity: 0;*/
+    display: none; /* comment this out for CSS hover */
+    background: rgba(29, 33, 37, 0.81);
+    /*transition: all 0.5s ease;*/
+}
+
+    .img-title h5 {
+        position: absolute;
+        color: #fff;
+        top: 33%;
+        width: 100%;
+
+    }
