@@ -9,7 +9,7 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @images = Image.order(created_at: :desc)
+    @images = Image.search(params[:search], params[:search_method])
   end
 
   def show
@@ -28,10 +28,7 @@ class ImagesController < ApplicationController
     @image = current_user.images.new(image_params)
 
     if @image.save
-
-      #render :text => @image.sharedimg.url(:thumb)
       respond_with @image
-
     else
       render action: 'new'
     end

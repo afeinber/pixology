@@ -27,4 +27,21 @@ class Image < ActiveRecord::Base
       self.categories <<  Category.find_or_create_by(description: cat[:description])
     end
   end
+
+  def self.search(search, search_method)
+    if search.present?
+      if search_method == 'Users'
+        User.where('username ~* ?', /\A.*#{search}.*\Z/i)
+      else
+        cats = Category.where('description ILIKE ?', search)
+        images = []
+        cats.each do |cat|
+          images += cat.images
+        end
+        images.uniq.sort { |a,b| a.created_at <=> b.created_at }.reverse
+      end
+    else
+      Image.order(created_at: :desc)
+    end
+  end
 end

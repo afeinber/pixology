@@ -6,8 +6,8 @@
 
     <div class="title-island"><h1>hot right now</h1></div>
 
-    <% @images.offset(6).each do |image| %>
-      <%= image_tag image.sharedimg.url(:thumb) %>
+    <% (5...@images.count).each do |i| %>
+      <%= image_tag @images[i].sharedimg.url(:thumb) %>
     <% end %>
   </div>
 </div>
