@@ -2,7 +2,13 @@
 <div class="row">
   <div class="medium-8 medium-centered text-center columns">
     <%= image_tag @image.sharedimg.url(:medium) %>
-    <button id = "favorite-button">Favorite</button>
+    <div id = "image-favorite" >
+      <% if current_user.favorites.find_by_image_id(@image.id).present? %>
+        <button class = 'alert' id = "unfavorite-button" image-id ="<%=@image.id%>" favorite-id ="<%=current_user.favorites.find_by_image_id(@image.id).id %>">UnFavorite</button>
+      <% else %>
+        <button id = "favorite-button" image-id ="<%=@image.id%>">Favorite</button>
+      <% end %>
+    </div>
   </div>
 </div>
 

@@ -4,6 +4,7 @@ Akk.initialize = function() {
   $(document).foundation();
 
    ProfileApp.initializer();
+   FavoriteApp.initializer();
 
   $('#image-comments').on('click', '.expander', function(event) {
     event.preventDefault();
