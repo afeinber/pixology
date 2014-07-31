@@ -17,7 +17,7 @@ var ProfileApp = {
     Id = event.target.parentElement.parentElement.getAttribute('image-id');
     $.ajax({
       type: "DELETE",
-      url: Routes.favorite_path(Id),
+      url: '/favorites/' + Id,
       dataType: 'json'
     })
     .done(event.target.parentElement.parentElement.remove());

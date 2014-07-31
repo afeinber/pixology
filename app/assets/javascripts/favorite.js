@@ -6,7 +6,7 @@ var FavoriteApp = {
     Id = event.target.getAttribute('favorite-id');
     $.ajax({
       type: "DELETE",
-      url: Routes.favorite_path(Id),
+      url: '/favorites/' + Id,
       dataType: 'json'
     })
     .done();
@@ -17,7 +17,7 @@ var FavoriteApp = {
     requestObj = { favorite:  {image_id: imageId}};
     $.ajax({
       type: "POST",
-      url: Routes.favorites_path(),
+      url: '/favorites',
       data: requestObj,
       dataType: 'json'
     })
