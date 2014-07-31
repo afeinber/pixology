@@ -10,6 +10,7 @@ var ProfileApp = {
       dataType: 'json'
     })
     .done(event.target.parentElement.parentElement.remove());
+    $('a[href="#my-images"]').text('My images (' + $('.my-images').length +')');
     event.preventDefault();
   },
   deleteFavorite: function(event){
@@ -20,6 +21,7 @@ var ProfileApp = {
       dataType: 'json'
     })
     .done(event.target.parentElement.parentElement.remove());
+    $('a[href="#my-favorites"]').text('Favorites (' + $('.my-favorites').length +')');
     event.preventDefault();
   },
   deleteInterest: function(event){
@@ -41,6 +43,7 @@ var ProfileApp = {
       dataType: 'json'
     })
     .done(event.target.parentElement.parentElement.remove());
+    $('a[href="#followings"]').text('Followings (' + $('.my-follows').length +')');
     event.preventDefault();
   },
   deleteProfileFollow: function(event){
