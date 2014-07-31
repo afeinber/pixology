@@ -1262,7 +1262,7 @@ $topbar-bg-color: rgba(255, 255, 255, 0.74);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 50px;
+$topbar-height: 70px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1462,7 +1462,23 @@ body {
   height: 15px;
 
 }
+.smile-tab{
+  color: #fff;
+  border: 0px solid #000000;
+  background-color: #7398d1;
+  height: 45px;
+  width: 65px;
+  margin-left: 73px;
+  margin-bottom: 5px;
+  font-size: 19px;
+  padding-top: 8px;
+  text-align: center;
+  border-radius: 0px 0px 200px 200px;
+-moz-border-radius: 0px 0px 200px 200px;
+-webkit-border-radius: 0px 0px 200px 200px;
 
+
+}
 .black-banner {
   background-color: #333;
   margin-bottom: 20px;
@@ -1537,7 +1553,7 @@ nav h1 {
   width: 100%;
   height: 80px;
   background: rgba(29, 33, 37, 0.81);
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   a {
     background-color: #84B0DA;
     height: 36px;
@@ -1622,8 +1638,8 @@ div.my-images {
   text-align: center;
 }
 .nav-title{
-  font-family: 'Arvo', serif;
-  letter-spacing: 0.0325em;
+  line-height: 83px;
+  padding-left: 15px;
 
 }
 
@@ -1700,6 +1716,9 @@ div.my-images {
 
 }
 
+#dropdown{
+  margin-top: 7px;
+}
 .img-title {
     position: absolute;
     top: 0;

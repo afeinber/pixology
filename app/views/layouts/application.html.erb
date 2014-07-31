@@ -20,9 +20,9 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-
-        <h1 class="nav-title"><%= link_to 'pixology', root_path %></h1>
-
+      <div class="nav-title">
+        <%= link_to image_tag('https://s3.amazonaws.com/akk-imgshare/permanent+images/pixology-with-eyes.png'), root_path %>
+      </div>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -61,7 +61,7 @@
         <li class="has-form" id="search-bar-nav">
           <div class="row collapse">
             <%= form_for :search, url: searches_path, role: 'search' do |f| %>
-              <div class="large-2 small-2 columns">
+              <div class="large-2 small-2 columns" id="dropdown">
 
                 <%= f.select :search_type, "<option>Images</option><option>Users</option>".html_safe %>
               </div>
@@ -79,6 +79,7 @@
       </ul>
     </div>
   </div>
+  <div class="smile-tab"><i class="fa fa-search"></i></div>
   <div class="row">
     <%= display_flash_messages %>
   </div>
