@@ -71,7 +71,7 @@ Akk.initialize = function() {
    $(this).parent().ajaxSubmit({
     beforeSubmit: function(a,f,o) {
      o.dataType = 'json';
-     $('img#thumb').attr('src', '/assets/C36.gif');
+     $('img#thumb').attr('src', 'https://s3.amazonaws.com/akk-imgshare/permanent+images/C36.gif');
     },
     complete: function(XMLHttpRequest) {
       $('#image-add-tags-form').attr('action', Routes.image_path(XMLHttpRequest.responseJSON.id));
