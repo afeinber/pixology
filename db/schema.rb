@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730185805) do
+ActiveRecord::Schema.define(version: 20140731220137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,17 +117,6 @@ ActiveRecord::Schema.define(version: 20140730185805) do
   end
 
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
-
-  create_table "notifications", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "notified_id"
-    t.integer  "image_id"
-    t.boolean  "is_read"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

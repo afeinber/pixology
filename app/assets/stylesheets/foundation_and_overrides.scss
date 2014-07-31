@@ -1479,6 +1479,7 @@ nav h1 {
 }
 #nav-dropdown {
   padding-right: 10px;
+  width: 300px;
 }
 
 #image-comments {
@@ -1701,36 +1702,51 @@ div.my-images {
 }
 
 .img-title {
-    position: absolute;
-    top: 0;
-    margin: 0;
-    height: 200px;
-    width: 200px;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  height: 200px;
+  width: 200px;
 
-    /*opacity: 0;*/
-    display: none; /* comment this out for CSS hover */
-    background: rgba(29, 33, 37, 0.87);
-    /*transition: all 0.5s ease;*/
-    padding-left: 15px;
+  /*opacity: 0;*/
+  display: none; /* comment this out for CSS hover */
+  background: rgba(29, 33, 37, 0.87);
+  /*transition: all 0.5s ease;*/
+  padding-left: 15px;
 
-    p {
-        position: relative;
-        color: #fff;
-        top: 33%;
-        width: 80%;
-        text-align: left;
-        font-size: 13px;
-        letter-spacing: 0.0425em;
-      }
-      a {
-        color: #fff;
-        text-decoration: underline;
-      }
-      h3 {
-        position: relative;
-text-align: center;
-        color: #fff;
+  p {
+      position: relative;
+      color: #fff;
+      top: 33%;
+      width: 80%;
+      text-align: left;
+      font-size: 13px;
+      letter-spacing: 0.0425em;
+  }
+    a {
+      color: #fff;
+      text-decoration: underline;
+  }
+    h3 {
+      position: relative;
+      text-align: center;
+      color: #fff;
 
-      }
-    }
+  }
+}
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10px;
+}
 

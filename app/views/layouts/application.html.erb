@@ -39,7 +39,7 @@
           <ul class="dropdown" id="nav-dropdown">
             <% if user_signed_in? %>
             <li><%= link_to 'Profile', user_path(current_user.id) %></li>
-            <li><a href="#">Notifications</a></li>
+            <li><span class='badge'><%= notification_count %></span><%= link_to 'Notifications', notifications_path %></li>
             <li><%= link_to 'Add Image', new_image_path %></li>
             <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>

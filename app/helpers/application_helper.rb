@@ -18,6 +18,10 @@ module ApplicationHelper
     end
   end
 
+  def notification_count
+    current_user.mailbox.notifications.count
+  end
+
 
   def vote_class(votable, is_upvote)
     vote = current_user.votes.find_by(votable: votable)
