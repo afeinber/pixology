@@ -28,12 +28,11 @@
         </div>
         <div id="panel1" class="content active">
           <!-- <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 imagelist"> -->
-            <div class="row thumb-row">
-              <div class='thumb-img'><%= image_tag 'blackcats-med.jpg' %></div>
-              <div class='thumb-img'><%= image_tag 'book-med.jpg' %></div>
-              <div class='thumb-img'><%= image_tag 'books-med.jpg' %></div>
-              <div class='thumb-img'><%= image_tag 'desk-med.jpg' %></div>
-              <div class='thumb-img'><%= image_tag 'dog-md.jpg' %></div>
+            <div class="photo-grid">
+
+              <% @images.limit(5).each do |image| %>
+                <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+              <% end %>
 
             </div>
           <!-- </ul> -->
