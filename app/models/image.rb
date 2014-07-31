@@ -20,13 +20,25 @@ class Image < ActiveRecord::Base
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :sharedimg, :content_type => /\Aimage\/.*\Z/
   validates :sharedimg_file_name, presence: true
+  validates :user, presence: true
 
-
-  def set_categories(categories)
-    categories.each_value do |cat|
-      binding.pry
-      self.categories <<  Category.find_or_create_by(description: cat[:description])
+  def self.hot_right_now
+    imgs = self.
+        where('created_at > ?', 1.day.ago).
+        to_a.
+        sort { |a,b| a.votes.where(is_upvote: true).count <=> b.votes.where(is_upvote: true).count }.
+        reverse.
+        first(12)
+    if imgs.count < 12
+      imgs << self.first(12 - imgs.count)
     end
+    imgs
   end
 
+  def self.rand_images
+    imgs = Image.ids.sample(12)
+    imgs.map do |img|
+      Image.find(img)
+    end
+  end
 end
