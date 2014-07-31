@@ -8,6 +8,11 @@ Akk.initialize = function() {
 
 
 
+  $('.gallery-item').hover( function() {
+        $(this).find('.img-title').fadeIn(300);
+    }, function() {
+        $(this).find('.img-title').fadeOut(100);
+  });
 
   $('#image-comments').on('click', '.expander', function(event) {
     event.preventDefault();
