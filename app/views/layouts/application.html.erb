@@ -61,7 +61,7 @@
         <li class="has-form" id="search-bar-nav">
           <div class="row collapse">
             <%= form_for :search, url: searches_path, role: 'search' do |f| %>
-              <div class="large-2 small-2 columns">
+              <div class="large-2 small-2 columns" id="dropdown">
 
                 <%= f.select :search_type, "<option>Images</option><option>Users</option>".html_safe %>
               </div>
