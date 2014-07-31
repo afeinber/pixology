@@ -37,7 +37,7 @@ class Image < ActiveRecord::Base
 
   def self.rand_images
     imgs = Image.ids.sample(12)
-    imgs.map do |img|
+    imgs = imgs.map do |img|
       Image.find(img)
     end
     imgs
