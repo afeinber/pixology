@@ -12,7 +12,16 @@ var ProfileApp = {
     .done(event.target.parentElement.parentElement.remove());
     event.preventDefault();
   },
-
+  deleteFavorite: function(event){
+    Id = event.target.parentElement.parentElement.getAttribute('image-id');
+    $.ajax({
+      type: "DELETE",
+      url: Routes.favorite_path(Id),
+      dataType: 'json'
+    })
+    .done(event.target.parentElement.parentElement.remove());
+    event.preventDefault();
+  },
   deleteInterest: function(event){
     Id = event.target.parentElement.getAttribute('interest-id');
     $.ajax({
@@ -118,6 +127,8 @@ var ProfileApp = {
     $('#interest-container').on('click', '#delete-button',this.deleteInterest.bind(this));
     $('#followings').on('click', '#unfollow-button',this.deleteFollow.bind(this));
     $('#add-interest').on('click',this.addCategory.bind(this));
+    $('#my-favorites').on('click', '#unfavorite-button',this.deleteFavorite.bind(this));
+
 
     $('#profile').on('click','#unfollow-button',this.deleteProfileFollow.bind(this));
     $('#profile').on('click','#follow-button',this.addFollow.bind(this));
