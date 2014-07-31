@@ -35,7 +35,7 @@
             <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
           </div>
           <div class="accordion-wrapper accordion-center-wrapper">
-            <a href="#" class="accordion-link accordion-center">#such-pictures</a>
+           <strong><a href="#" class="accordion-link accordion-center">#bill nye</a></strong>
           </div>
           <div class="accordion-wrapper accordion-right-wrapper">
             <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
@@ -61,7 +61,17 @@
       </dd>
       <div class="home-spacer"></div>
       <dd class="accordion-navigation">
-        <a href="#panel2">Accordion 2</a>
+        <div class="accordion-head">
+          <div class="accordion-wrapper accordion-left-wrapper">
+            <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
+          </div>
+          <div class="accordion-wrapper accordion-center-wrapper">
+            <strong><a href="#" class="accordion-link accordion-center">#such-pictures</a></strong>
+          </div>
+          <div class="accordion-wrapper accordion-right-wrapper">
+            <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
+          </div>
+        </div>
         <div id="panel2" class="content ">
           <div class="photo-grid">
 
@@ -80,22 +90,32 @@
       </dd>
       <div class="home-spacer"></div>
       <dd class="accordion-navigation">
-        <a href="#panel3">Accordion 3</a>
+        <div class="accordion-head">
+          <div class="accordion-wrapper accordion-left-wrapper">
+            <a href="#collapse" class="accordion-link expander"><%= fa_icon "angle-double-up" %></a>
+          </div>
+          <div class="accordion-wrapper accordion-center-wrapper">
+            <strong><a href="#" class="accordion-link accordion-center">#puppies</a></strong>
+          </div>
+          <div class="accordion-wrapper accordion-right-wrapper">
+            <a href="#show-all" class="accordion-link show-all"><%= fa_icon "th" %></a>
+          </div>
+        </div>
         <div id="panel3" class="content">
-          <div class="photo-grid">
+          <div class="row photo-grid">
 
-
+            <div class="wrapper clearfix">
               <% @images.limit(5).each do |image| %>
-                <div class="wrapper clearfix">
-                  <figure class="gallery-item">
-                    <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
-                    <figcaption class="img-title">
-                      <h5><%= image.caption %> </h5>
-                    </figcaption>
-                  </figure>
+                <div class="gallery-item">
+                  <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+                  <div class="img-title">
+                    <%= image.caption %>
+                  </div>
                 </div>
-              <% end %>
-            </div>
+          <% end %>
+          </div>
+          </div>
+          <!-- </ul> -->
         </div>
       </dd>
     </dl>

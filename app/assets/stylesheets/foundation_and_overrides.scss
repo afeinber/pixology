@@ -1459,7 +1459,7 @@ body {
 }
 
 .home-spacer {
-  height: 30px;
+  height: 15px;
 
 }
 
@@ -1692,10 +1692,12 @@ div.my-images {
 
 .gallery-item {
   float: left;
+  position: relative;
 }
 
 .gallery-item:hover .img-title {
     /*opacity: 1;*/
+
 }
 
 .img-title {
