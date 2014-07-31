@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  resources :categories
+  resources :categories, only: [:create,:destroy]
+  resources :favorites, only: [:create,:destroy]
   resources :interests, only:[:create, :destroy]
   resources :follows, only:[:create, :destroy]
   resources :users, only: [:show]

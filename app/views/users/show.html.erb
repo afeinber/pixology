@@ -1,10 +1,12 @@
 <div class="row">
-  <div class="medium-10 medium-centered columns">
+  <div class="medium-12 medium-centered columns">
     <ul class="tabs" data-tab>
       <li class="tab-title active profile-tab-wrapper"><a href="#profile">Profile</a></li>
-      <li class="tab-title profile-tab-wrapper"><a href="#my-images">My images</a></li>
-      <li class="tab-title profile-tab-wrapper"><a href="#followings">Followings</a></li>
-      <li class="tab-title profile-tab-wrapper"><a href="#followers">Followers</a></li>
+      <li class="tab-title profile-tab-wrapper"><a href="#my-images">My images (<%=@user.images.length%>)</a></li>
+      <li class="tab-title profile-tab-wrapper"><a href="#my-favorites">Favorites (<%=@user.favorites.length%>)</a></li>
+      <li class="tab-title profile-tab-wrapper"><a href="#followings">Followings (<%=@user.follows.length%>)</a></li>
+      <li class="tab-title profile-tab-wrapper"><a href="#followers">Followers (<%=@user.inverse_follows.length%>)</a></li>
+      <li class="tab-title profile-tab-wrapper"><a href="#notification">Notifications</a></li>
     </ul>
 
     <div class="tabs-content">
@@ -61,12 +63,24 @@
           </div>
         <%end%>
       </div>
+      <div class="content" id="my-favorites">
+          <% @user.favorites.each do |favorite|%>
+          <div class = 'my-favorites' image-id = "<%= favorite.id %>">
+            <%= link_to image_tag(favorite.image.sharedimg.url(:thumb)), favorite.image %>
+            <% if user_signed_in? %>
+              <%if @user.username == current_user.username%>
+                <p><button class ='alert' id ='unfavorite-button'>Unfavorite</button></p>
+              <% end %>
+            <% end %>
+          </div>
+        <%end%>
+      </div>
       <div class="content" id="followings">
         <% @user.follows.each do |follow|%>
           <div class="panel callout radius text-center">
             <div class='my-follows' follow-id="<%= follow.id %>">
-              <%= image_tag follow.followee.avatar.url(:thumb) %>
-              <%= link_to follow.followee.username, user_path(follow.followee.id) %>
+              <h2><%= link_to follow.followee.username, user_path(follow.followee.id) %></h2>
+              <p><%= link_to image_tag(follow.followee.avatar.url(:thumb)), user_path(follow.followee.id) %></p>
               <% if user_signed_in? %>
                 <%if @user.username == current_user.username%>
                   <button class='tiny alert' id='unfollow-button'>UnFollow</button>
@@ -79,8 +93,8 @@
       <div class="content" id="followers">
           <% @user.inverse_follows.each do |i_follow|%>
           <div class="panel callout radius text-center">
-            <%= image_tag i_follow.user.avatar.url(:thumb) %>
-            <%= link_to i_follow.user.username, user_path(i_follow.user.id) %>
+            <h2> <%= link_to i_follow.user.username, user_path(i_follow.user.id) %></h2>
+            <p><%= link_to image_tag(i_follow.user.avatar.url(:thumb)), user_path(i_follow.user.id) %></p>
           </div>
         <%end%>
       </div>

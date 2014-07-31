@@ -10,9 +10,20 @@ var ProfileApp = {
       dataType: 'json'
     })
     .done(event.target.parentElement.parentElement.remove());
+    $('a[href="#my-images"]').text('My images (' + $('.my-images').length +')');
     event.preventDefault();
   },
-
+  deleteFavorite: function(event){
+    Id = event.target.parentElement.parentElement.getAttribute('image-id');
+    $.ajax({
+      type: "DELETE",
+      url: '/favorites/' + Id,
+      dataType: 'json'
+    })
+    .done(event.target.parentElement.parentElement.remove());
+    $('a[href="#my-favorites"]').text('Favorites (' + $('.my-favorites').length +')');
+    event.preventDefault();
+  },
   deleteInterest: function(event){
     Id = event.target.parentElement.getAttribute('interest-id');
     $.ajax({
@@ -32,6 +43,7 @@ var ProfileApp = {
       dataType: 'json'
     })
     .done(event.target.parentElement.parentElement.remove());
+    $('a[href="#followings"]').text('Followings (' + $('.my-follows').length +')');
     event.preventDefault();
   },
   deleteProfileFollow: function(event){
@@ -118,6 +130,8 @@ var ProfileApp = {
     $('#interest-container').on('click', '#delete-button',this.deleteInterest.bind(this));
     $('#followings').on('click', '#unfollow-button',this.deleteFollow.bind(this));
     $('#add-interest').on('click',this.addCategory.bind(this));
+    $('#my-favorites').on('click', '#unfavorite-button',this.deleteFavorite.bind(this));
+
 
     $('#profile').on('click','#unfollow-button',this.deleteProfileFollow.bind(this));
     $('#profile').on('click','#follow-button',this.addFollow.bind(this));
