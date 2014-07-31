@@ -62,6 +62,7 @@ Akk.initialize = function() {
 
   });
 
+  //This is the AJAX call when an image is uploaded.
   $('#uploadForm input').change(function(){
    $(this).parent().ajaxSubmit({
     beforeSubmit: function(a,f,o) {
@@ -86,6 +87,8 @@ Akk.initialize = function() {
   $('#categories').on('click', '.input-text', function(){
     $(this).val('#');
   });
+
+  $('.notification-delete').click(Akk.deleteNotification);
 };
 
 

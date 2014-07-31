@@ -11,13 +11,13 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     @comment.commentable.user.notify(
-      "Your #{commentable_type} was commented on",
-      "Your #{commentable_type} was commented on",
-      current_user
+      "was commented on",
+      "was commented on",
+      @comment
     )
 
     respond_with(@comment)
-
+    #"Your #{commentable_type}
 
   end
 

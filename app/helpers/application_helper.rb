@@ -1,5 +1,22 @@
 module ApplicationHelper
+  def object_for_notification_display(obj)
+    if obj.class.name == 'Favorite'
+      obj.image
+    elsif obj.class.name == 'Comment'
+      while obj.commentable_type == 'Comment'
+        obj = obj.commentable
+      end
+      obj.commentable
+    end
+  end
 
+  def name_for_notification_display(obj)
+    if obj.class.name == 'Favorite'
+      'image'
+    elsif obj.class.name == 'Comment'
+      obj.commentable.class.name.downcase
+    end
+  end
 
 
   def vote_class(votable, is_upvote)

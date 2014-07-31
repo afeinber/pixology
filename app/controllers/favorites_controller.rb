@@ -6,6 +6,12 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new(favorite_params)
     @favorite.user_id = current_user.id
 
+    @favorite.image.user.notify(
+      "Your image was favorited",
+      "Your image was favorited",
+      @favorite
+    )
+
     if @favorite.save
       respond_with(@favorite)
     else
