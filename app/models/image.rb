@@ -40,5 +40,6 @@ class Image < ActiveRecord::Base
     imgs.map do |img|
       Image.find(img)
     end
+    imgs
   end
 end
