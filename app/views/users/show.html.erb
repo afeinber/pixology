@@ -79,8 +79,8 @@
         <% @user.follows.each do |follow|%>
           <div class="panel callout radius text-center">
             <div class = 'my-follows' follow-id = "<%= follow.id %>">
-              <%= image_tag follow.followee.avatar.url(:thumb) %>
-              <%= link_to follow.followee.username, user_path(follow.followee.id) %>
+              <h2><%= link_to follow.followee.username, user_path(follow.followee.id) %></h2>
+              <p><%= link_to image_tag(follow.followee.avatar.url(:thumb)), user_path(follow.followee.id) %></p>
               <% if user_signed_in? %>
                 <%if @user.username == current_user.username%>
                   <button class ='tiny alert' id ='unfollow-button'>UnFollow</button>
@@ -93,8 +93,8 @@
       <div class="content" id="followers">
           <% @user.inverse_follows.each do |i_follow|%>
           <div class="panel callout radius text-center">
-            <%= image_tag i_follow.user.avatar.url(:thumb) %>
-            <%= link_to i_follow.user.username, user_path(i_follow.user.id) %>
+            <h2> <%= link_to i_follow.user.username, user_path(i_follow.user.id) %></h2>
+            <p><%= link_to image_tag(i_follow.user.avatar.url(:thumb)), user_path(i_follow.user.id) %></p>
           </div>
         <%end%>
       </div>
