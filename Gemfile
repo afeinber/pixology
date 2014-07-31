@@ -30,7 +30,7 @@ gem 'devise'
 
 
 gem 'foundation-rails'
-gem 'foundation_rails_helper'
+#gem 'foundation_rails_helper'
 gem 'paperclip'
 gem 'rmagick'
 

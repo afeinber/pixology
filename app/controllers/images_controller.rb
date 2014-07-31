@@ -28,10 +28,7 @@ class ImagesController < ApplicationController
     @image = current_user.images.new(image_params)
 
     if @image.save
-
-      #render :text => @image.sharedimg.url(:thumb)
       respond_with @image
-
     else
       render action: 'new'
     end
@@ -39,7 +36,8 @@ class ImagesController < ApplicationController
 
   def update
     @image = Image.find(params[:id])
-    @image.set_categories(image_params['categories_attributes'])
+    @image.update(image_params)
+    #@image.set_categories(image_params['categories_attributes'])
     if @image.save
       flash[:notice] = "Your image was sucessfully created"
       redirect_to(@image)

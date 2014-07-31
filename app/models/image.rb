@@ -24,7 +24,9 @@ class Image < ActiveRecord::Base
 
   def set_categories(categories)
     categories.each_value do |cat|
+      binding.pry
       self.categories <<  Category.find_or_create_by(description: cat[:description])
     end
   end
+
 end

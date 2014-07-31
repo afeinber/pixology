@@ -1,0 +1,18 @@
+<div class="small-12 large-12 columns">
+  <div class="photo-grid">
+    <% @users.first(6).each do |user| %>
+      <%= image_tag user.avatar.url(:thumb) %>
+    <% end %>
+
+    <div class="title-island"><h1><%= @tag %></h1></div>
+
+    <% (5...@users.count).each do |i| %>
+      <%= image_tag @users[i].avatar.url(:thumb) %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
