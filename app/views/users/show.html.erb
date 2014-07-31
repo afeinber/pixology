@@ -64,7 +64,7 @@
       <div class="content" id="followings">
         <% @user.follows.each do |follow|%>
           <div class="panel callout radius text-center">
-            <div class='my-follows' follow-id = "<%= follow.id %>">
+            <div class='my-follows' follow-id="<%= follow.id %>">
               <%= image_tag follow.followee.avatar.url(:thumb) %>
               <%= link_to follow.followee.username, user_path(follow.followee.id) %>
               <% if user_signed_in? %>

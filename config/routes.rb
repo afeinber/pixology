@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :votes, only: [:create, :show]
   end
 
+  resources :searches, only: [:create]
+
   delete 'images/:image_id/votes', to: 'votes#destroy'
   delete 'comments/:comment_id/votes', to: 'votes#destroy'
 

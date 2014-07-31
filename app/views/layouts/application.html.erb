@@ -60,15 +60,16 @@
       <ul class="center">
         <li class="has-form" id="search-bar-nav">
           <div class="row collapse">
-            <%= form_tag images_path, method: 'get', role: 'search' do %>
+            <%= form_for :search, url: searches_path, role: 'search' do |f| %>
               <div class="large-2 small-2 columns">
-                <%= select_tag :search_method, "<option>Images</option><option>Users</option>".html_safe %>
+
+                <%= f.select :search_type, "<option>Images</option><option>Users</option>".html_safe %>
               </div>
               <div class="large-7 small-8 columns">
-                <%= text_field_tag :search, params[:search], label: false, placeholder: 'Search the collection...'%>
+                <%= f.text_field :query, label: false, placeholder: 'Search the collection...'%>
               </div>
               <div class="large-3 small-2 columns">
-                <%= button_tag type: 'submit', class: 'button expand', id: 'search-button' do %>
+                <%= f.button type: 'submit', class: 'button expand', id: 'search-button' do %>
                   <%= fa_icon 'search' %>
                 <% end %>
               </div>
