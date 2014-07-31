@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index'
+  root 'images#new'
 
   resources :categories, only: [:create,:destroy]
   resources :favorites, only: [:create,:destroy]
