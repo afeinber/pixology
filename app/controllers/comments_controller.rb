@@ -9,13 +9,13 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.commentable = commentable
     @comment.user = current_user
-    @comment.save
-    @comment.commentable.user.notify(
-      "was commented on",
-      "was commented on",
-      @comment
-    )
-
+    if @comment.save
+      @comment.commentable.user.notify(
+        "was commented on",
+        "was commented on",
+        @comment
+      )
+    end
     respond_with(@comment)
     #"Your #{commentable_type}
 

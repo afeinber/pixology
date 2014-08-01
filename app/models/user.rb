@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_many :notifications, dependent: :destroy
   has_many :votes, dependent: :destroy
 
+  validates :avatar, presence: true
+
   # mailboxer section
   acts_as_messageable
   # Returns the name of the user

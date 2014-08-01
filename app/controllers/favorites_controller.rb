@@ -22,6 +22,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find(params[:id])
+    Mailboxer::Notification.where(notified_object: @favorite).each(&:destroy)
     @favorite.destroy
 
     head :no_content
