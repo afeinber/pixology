@@ -934,7 +934,7 @@ $magellan-padding: 0 !important;
 // $include-html-media-classes: $include-html-classes;
 
 // We use this to set the progress bar height
-// $progress-bar-height: rem-calc(25);
+$progress-bar-height: rem-calc(60);
 // $progress-bar-color: #f6f6f6  ;
 
 // We use these to control the border styles
@@ -944,8 +944,8 @@ $magellan-padding: 0 !important;
 // $progress-bar-border-radius: $global-radius;
 
 // We use these to control the margin & padding
-// $progress-bar-pad: rem-calc(2);
-// $progress-bar-margin-bottom: rem-calc(10);
+$progress-bar-pad: 0;
+$progress-bar-margin-bottom: 0;
 
 // We use these to set the meter colors
 // $progress-meter-color: $primary-color;
@@ -1497,7 +1497,7 @@ body {
 
 #image-comments {
   background: #efefef;
-  padding: 50px 100px 50px 100px;
+  padding: 25px 40px 50px 40px;
 }
 .panel-footer{
 
@@ -1661,7 +1661,7 @@ div.my-images {
   border-radius: 10px 10px 0 0;
 }
 .stacked-buttons {
-  padding: 15px 0px 0px 5px;
+  padding: 5px 0px 0px 5px;
   margin-top: -20px;
 
 }
@@ -1669,7 +1669,7 @@ div.my-images {
 }
 #micro {
   padding-top: 0.425rem;
-  padding-right: 0.225rem;
+  padding-right: 0.275rem;
   padding-bottom: 0.26875rem;
   padding-left: 0.275rem;
   font-size: 0.6875rem;
@@ -1749,4 +1749,40 @@ div.my-images {
 
 .profile-unfavorite{
   width: 200px;
+}
+
+.shaped{
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.squish{
+  h1{
+    margin: 0px 0px 0px -2px;
+    padding: 0px;
+  }
+  p{
+    margin-top: -5px;
+
+  }
+}
+.show-image{
+  margin-bottom: 20px;
+
+}
+.comm-form{
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+#beauty-bar{
+    width: 500px;
+    margin: 0px;
+    padding-left: 160px;
+    padding-top: 200px;
+
+
+
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+
 }
