@@ -8,16 +8,18 @@ Akk.Comment = function(content, url, formElement){
 };
 
 Akk.Comment.prototype.remoteCreate = function(){
-  $.ajax({
-    url: this.url,
-    type: 'POST',
-    dataType: 'json',
-    data: { comment: { content: this.content } },
-  })
-  .done(this.appendComment.bind(this))
-  .fail(function() {
-    console.log("error");
-  });
+  if(this.content !== '#' && /\S/.test(this.content)) {
+    $.ajax({
+      url: this.url,
+      type: 'POST',
+      dataType: 'json',
+      data: { comment: { content: this.content } },
+    })
+    .done(this.appendComment.bind(this))
+    .fail(function() {
+      console.log("error");
+    });
+  }
 };
 
 Akk.Comment.prototype.appendComment = function(comment){
