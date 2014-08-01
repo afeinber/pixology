@@ -12,16 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-
 //= require foundation
 //= require handlebars.runtime
 //= require jquery.form
 //= require cocoon
+//= require js-routes
 //= require turbolinks
+//= require paloma
 //= require_tree .
 //= require main
 
-//= require js-routes
+
 
 
 

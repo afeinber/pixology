@@ -1767,6 +1767,7 @@ div.my-images {
   width: 200px;
 }
 
+
 .shaped{
   border-radius: 50px;
   margin-top: 20px;
@@ -1801,4 +1802,19 @@ div.my-images {
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
 
+#can {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+#pen-row {
+  position: relative;
+  top: -300px;
+  right: -560px;
+}
+.remix-buttons {
+  margin-right: 0;
+  margin-top: -50px;
 }

@@ -16,7 +16,7 @@ Akk.initialize = function() {
 
   $('.search-banner').hide();
   $('.smile-tab').click( function() {
-        $('.search-banner').slideToggle( "slow" );
+        $('.search-banner').slideToggle();
   });
 
   $('#image-comments').on('click', '.expander', function(event) {

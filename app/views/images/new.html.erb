@@ -19,7 +19,7 @@
     <%= form_for @uploaded_image, :method => :patch, :html => {:id => 'image-add-tags-form', :class => "image-add-tags-form"} do |f| %>
 
       <div class="field">
-        <%= f.text_field :caption %>
+        <%= f.text_field :caption, placeholder: 'Please describe the image...' %>
       </div>
       <div id="categories">
         <%= f.fields_for :categories do |category| %>

@@ -107,6 +107,8 @@ GEM
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
+    paloma (4.1.0)
+      jquery-rails
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -199,6 +201,7 @@ DEPENDENCIES
   jquery-rails
   js-routes
   mailboxer
+  paloma
   paperclip
   pg
   pry

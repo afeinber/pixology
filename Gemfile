@@ -35,7 +35,7 @@ gem 'paperclip'
 gem 'rmagick'
 
 gem 'js-routes'
-
+gem 'paloma'
 
 
 #makes working with nested forms easier
