@@ -3,6 +3,7 @@ class RemixesController < ApplicationController
 
   def new
     @remix = Image.new
+    @remix.categories.build
     @parent = Image.find(params[:image_id])
   end
 

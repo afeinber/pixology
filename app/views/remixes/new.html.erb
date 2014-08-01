@@ -36,18 +36,36 @@
       <div id="btns">
         <ul class="button-group">
           <li><a href="#themain" id="undo" class="button minimal" >Undo</a></li>
-          <li><a id="save" href="#themain" class="button minimal">Save</a></li>
           <li><a id="eraser" href="#themain" class="minimal button">Eraser</a></li>
           <li><a href="#themain" id="clear" class="minimal button" >Clear</a></li>
+          <li><a id="save" href="#themain" class="button minimal">Save</a></li>
         </ul>
       </div>
     </div>
   </div>
 
   <span id="result" ><br /></span>
-  <%= form_for [@image, @remix], url: {controller: 'remixes', action: 'create'}, html: {id: 'frm'} do |f| %>
-    <%= f.hidden_field :sharedimg, id: 'data' %>
-  <% end %>
+  <div class="row">
+    <div class="medium-8 medium-centered columns">
+    <%= form_for [@image, @remix], url: {controller: 'remixes', action: 'create'}, html: {id: 'frm'} do |f| %>
+      <%= f.hidden_field :sharedimg, id: 'data' %>
+      <div class="field">
+        <%= f.text_field :caption, placeholder: 'Please describe the image...' %>
+      </div>
+      <div id="categories">
+        <%= f.fields_for :categories do |category| %>
+          <div class="row collapse">
+            <%= render partial: 'categories/category_fields', locals: {f: category} %>
+              <div class="small-2 columns links">
+                <%= link_to_add_association(f, :categories, {partial: 'categories/category_fields', class: 'button postfix right'}) do %>
+                  <%= fa_icon 'plus' %>
+                <% end %>
+              </div>
+          </div>
+          <% end %>
+    <% end %>
+    </div>
+  </div>
 </div>
 
 
