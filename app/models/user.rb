@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   #return nil
   end
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => '/images/:attachment/default_:style.png' #'/assets/book-:style.jpg'
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => 'http://s3.amazonaws.com/akk-imgshare/users/avatars/000/000/005/thumb/generic_avatar.jpg?1406895462' #'/assets/book-:style.jpg'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def self.member_length(user_create_time)
