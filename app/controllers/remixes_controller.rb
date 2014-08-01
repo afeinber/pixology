@@ -15,7 +15,7 @@ class RemixesController < ApplicationController
       @image.user.notify(
         "was remixed",
         "was remixed",
-        @favorite
+        @remix
       )
      redirect_to @remix
     else
@@ -27,7 +27,6 @@ class RemixesController < ApplicationController
   private
 
   def remix_params
-    binding.pry
     params.require(:image).permit(:sharedimg, :caption, categories_attributes: [:remix_id, :description, :_destroy])
   end
 

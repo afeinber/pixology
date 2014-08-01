@@ -5,7 +5,6 @@ var RemixesController = Paloma.controller('Remixes');
 restorePoints = [];
 // Executes when Rails User#new is executed.
 RemixesController.prototype.new = function(){
-
   $(document).ready(Drawing.initialize);
   $(document).on('page:load', Drawing.initialize);
 };
@@ -46,15 +45,28 @@ var Drawing = {
     $("#undo").click(function(event){event.preventDefault();undoDrawOnCanvas();});
 
     $("#eraser").click(function(event){event.preventDefault();e.strokeStyle="#fff";});
-    $("#save").click(function(event){event.preventDefault();$("#result").html("<img src="+d.toDataURL()+' /><br /><a href="#" id="get" class="minimal" >Download This</a>');$("#data").val(d.toDataURL());$("#get").click(function(){$("#frm").trigger("submit");});});$("#clear").click(function(){e.fillStyle="#fff";e.fillRect(0,0,d.width,d.height);e.strokeStyle="red";e.fillStyle="red";});
+    $("#save").click(function(event){
+      event.preventDefault();
+      //$("#result").html("<img src="+d.toDataURL()+' /><br /><a href="#" id="get" class="minimal" >Download This</a>');
+      var nyanCat = new Image();
+      nyanCat.crossOrigin="anonymous";
+      nyanCat.src = 'https://s3.amazonaws.com/akk-imgshare/permanent+images/C36.gif';
+      $(nyanCat).load(function() {
+        e.drawImage(nyanCat, 0, 0);
+      });
+
+      $("#data").val(d.toDataURL());
+      $("#frm").trigger("submit");
+    });
+    //$("#save").click(function(event){event.preventDefault();$("#result").html("<img src="+d.toDataURL()+' /><br /><a href="#" id="get" class="minimal" >Download This</a>');$("#data").val(d.toDataURL());$("#get").click(function(){$("#frm").trigger("submit");});});$("#clear").click(function(){e.fillStyle="#fff";e.fillRect(0,0,d.width,d.height);e.strokeStyle="red";e.fillStyle="red";});
 
     var myImage = new Image();
     myImage.crossOrigin="anonymous";
     myImage.src = $('#themain').data('parent-url');
 
-    myImage.onload = function() {
+    $(myImage).load(function() {
       e.drawImage(myImage, 0, 0);
-    };
+    });
 
   }};
 

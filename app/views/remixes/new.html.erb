@@ -48,9 +48,6 @@
   <%= form_for [@image, @remix], url: {controller: 'remixes', action: 'create'}, html: {id: 'frm'} do |f| %>
     <%= f.hidden_field :sharedimg, id: 'data' %>
   <% end %>
-  <!-- <form action="<%= image_remixes_path(@parent)%>" method="post" id="frm"/>
-    <input type="hidden" name="data" id="data" />
-  </form> -->
 </div>
 
 

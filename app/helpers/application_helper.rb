@@ -7,6 +7,8 @@ module ApplicationHelper
         obj = obj.commentable
       end
       obj.commentable
+    elsif obj.class.name == 'Image'
+      obj
     end
   end
 
@@ -15,6 +17,8 @@ module ApplicationHelper
       'image'
     elsif obj.class.name == 'Comment'
       obj.commentable.class.name.downcase
+    elsif obj.class.name == 'Image'
+      'image'
     end
   end
 
