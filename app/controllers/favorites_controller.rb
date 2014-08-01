@@ -7,8 +7,8 @@ class FavoritesController < ApplicationController
     @favorite.user_id = current_user.id
 
     @favorite.image.user.notify(
-      "Your image was favorited",
-      "Your image was favorited",
+      "was favorited",
+      "was favorited",
       @favorite
     )
 

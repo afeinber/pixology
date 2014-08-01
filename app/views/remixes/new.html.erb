@@ -1,0 +1,56 @@
+<div id="themain" data-parent-url="<%= @parent.sharedimg.url(:medium) %>">
+  <canvas id="can" width="450" height="400" ></canvas>
+  <div id="clr">
+    <div style="background-color:black;"></div>
+    <div style="background-color:red;"></div>
+    <div style="background-color:green;"></div>
+    <div style="background-color:orange;"></div>
+    <div style="background-color:#FFFF00;"></div>
+    <div style="background-color:#F43059;"></div>
+    <div style="background-color:#ff00ff;"></div>
+    <div style="background-color:#9ecc3b;"></div>
+    <div style="background-color:#fbd;"></div>
+    <div style="background-color:#fff460;"></div>
+    <div style="background-color:#F43059;"></div>
+    <div style="background-color:#82B82C;"></div>
+    <div style="background-color:#0099FF;"></div>
+    <div style="background-color:#ff00ff;"></div>
+    <div style="background-color:rgb(128,0,255);"></div>
+    <div style="background-color:rgb(255,128,0);"></div>
+    <div style="background-color:rgb(153,254,0);"></div>
+    <div style="background-color:rgb(18,0,255);"></div>
+    <div style="background-color:rgb(255,28,0);"></div>
+    <div style="background-color:rgb(13,54,0);"></div>
+    </div><br /><br />
+  <div class="row" id="pen-row">
+    <div class="medium-8 medium-centered columns">
+
+      Pen size: <input type="range" min="0" max="50" value="5" id="bsz"/><br />
+      <br />
+      Pen color: <input type="color" placeholder="#FF00FF"  value="#FF00FF" id="bcl"/><br />
+    </div>
+  </div>
+
+  <div class="row remix-buttons">
+    <div class="medium-6 medium-centered columns">
+      <div id="btns">
+        <ul class="button-group">
+          <li><a href="#themain" id="undo" class="button minimal" >Undo</a></li>
+          <li><a id="save" href="#themain" class="button minimal">Save</a></li>
+          <li><a id="eraser" href="#themain" class="minimal button">Eraser</a></li>
+          <li><a href="#themain" id="clear" class="minimal button" >Clear</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <span id="result" ><br /></span>
+  <%= form_for [@image, @remix], url: {controller: 'remixes', action: 'create'}, html: {id: 'frm'} do |f| %>
+    <%= f.hidden_field :sharedimg, id: 'data' %>
+  <% end %>
+  <!-- <form action="<%= image_remixes_path(@parent)%>" method="post" id="frm"/>
+    <input type="hidden" name="data" id="data" />
+  </form> -->
+</div>
+
+
