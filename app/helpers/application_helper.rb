@@ -19,18 +19,26 @@ module ApplicationHelper
   end
 
   def notification_count
-    current_user.mailbox.notifications.count
+    if user_signed_in?
+      current_user.mailbox.notifications.count
+    else
+      0
+    end
   end
 
 
   def vote_class(votable, is_upvote)
-    vote = current_user.votes.find_by(votable: votable)
-    if !vote.present?
-      "secondary"
-    elsif is_upvote && vote.is_upvote
-      "success"
-    elsif !is_upvote && !vote.is_upvote
-      "alert"
+    if user_signed_in?
+      vote = current_user.votes.find_by(votable: votable)
+      if !vote.present?
+        "secondary"
+      elsif is_upvote && vote.is_upvote
+        "success"
+      elsif !is_upvote && !vote.is_upvote
+        "alert"
+      else
+        "secondary"
+      end
     else
       "secondary"
     end
