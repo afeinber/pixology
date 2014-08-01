@@ -8,17 +8,18 @@
   </div>
 
 <!-- Favorite Button -->
-  <div class="medium-3 columns" id="image-favorite">
+  <div class="medium-4 columns" id="image-favorite">
     <% if user_signed_in? %>
       <% if current_user.favorites.find_by_image_id(@image.id).present? %>
-          <button class = 'alert shaped' id = "unfavorite-button" image-id ="<%=@image.id%>" favorite-id ="<%=current_user.favorites.find_by_image_id(@image.id).id %>">UnFavorite</button>
+          <button class='alert shaped' id="unfavorite-button" image-id="<%=@image.id%>" favorite-id="<%=current_user.favorites.find_by_image_id(@image.id).id %>">UnFavorite</button>
       <% else %>
-        <button class="shaped" id = "favorite-button" image-id ="<%=@image.id%>">Favorite</button>
+        <button class="shaped" id="favorite-button" image-id="<%=@image.id%>">Favorite</button>
       <% end %>
+      <%= link_to 'Remix', new_image_remix_path(@image), class: 'button shaped' %>
     <% end %>
   </div>
 
-  <div class="medium-2 columns">&nbsp;</div>
+  <div class="medium-1 columns">&nbsp;</div>
 </div>
 
 <div class="row">

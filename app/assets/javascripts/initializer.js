@@ -87,6 +87,11 @@ Akk.initialize = function() {
   $('#image-stats .downvote').click(Akk.makeVote);
   $('#image-comments').on('click', '.upvote', Akk.makeVote);
   $('#image-comments').on('click', '.downvote', Akk.makeVote);
+  $('#search_query').click(function(){
+    if($(this).parents('form').find('#search_search_type').val() === 'Images') {
+      $(this).val('#')
+    }
+  });
 
   //sets the category text field to a hash to encourage users to type hashtags
   $('#categories').on('click', '.input-text', function(){
