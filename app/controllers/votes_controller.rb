@@ -20,9 +20,9 @@ class VotesController <  ApplicationController
   end
 
   def destroy
-    vote = Vote.find_by(user_id: current_user.id, votable: votable)
-    vote.destroy
-    respond_with(votable, vote)
+    @vote = Vote.find_by(user_id: current_user.id, votable: votable)
+    @vote.destroy
+    render :json => @vote
   end
 
   private
