@@ -1661,7 +1661,7 @@ div.my-images {
   border-radius: 10px 10px 0 0;
 }
 .stacked-buttons {
-  padding: 15px 0px 0px 5px;
+  padding: 0px 0px 0px 5px;
   margin-top: -20px;
 
 }
@@ -1749,4 +1749,19 @@ div.my-images {
 
 .profile-unfavorite{
   width: 200px;
+}
+
+.shaped{
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.squish{
+  h1{
+    margin: 0px 0px 0px -2px;
+    padding: 0px;
+  }
+  p{
+    margin-top: -5px;
+
+  }
 }
