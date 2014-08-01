@@ -1489,10 +1489,7 @@ body {
     font-weight: 800;
   }
 }
-nav h1 {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 40px;
-}
+
 #nav-dropdown {
   padding-right: 10px;
   width: 300px;
@@ -1565,14 +1562,13 @@ nav h1 {
   #search-button{
     font-size: 18px;
   }
-  input{
+  input {
     background: rgba(172, 184, 196, 0.28);
     border: 1px solid rgba(172, 184, 196, 0.28);
     height: 40x;
     font-size: 18px;
   }
-  input:focus
-  {
+  input:focus {
     background-color: #84848d;
     box-shadow: none;
   }
@@ -1592,7 +1588,6 @@ nav h1 {
      color: #414448;
      font-style: italic;
   }
-
 }
 #search-bar-nav {
 padding-top: 12px;
@@ -1611,9 +1606,7 @@ padding-top: 12px;
     font-weight: 900;
     font-style: italic;
     font-size: 60px;
-
   }
-
 }
 .nested-comment{
 
@@ -1633,7 +1626,6 @@ padding-top: 12px;
 .profile-tab-wrapper{
   width: 20%;
 }
-
 div.my-images {
   float: left;
   text-align: center;
@@ -1641,21 +1633,16 @@ div.my-images {
 .nav-title{
   line-height: 83px;
   padding-left: 15px;
-
 }
-
 .row-with-padding {
   padding: rem-calc(30px);
 }
-
 .upvote.secondary {
   margin-bottom: 0px;
   margin-right: -4px;
   border-radius: 10px 10px 0 0;
   background-color: #84B0DA;
   color: white;
-
-
 }
 .downvote.secondary {
   border-radius: 0 0 10px 10px;
@@ -1679,8 +1666,6 @@ div.my-images {
 
 }
 .vote.tiny {
-
-
 }
 #micro {
   padding-top: 0.425rem;
@@ -1711,48 +1696,41 @@ div.my-images {
   float: left;
   position: relative;
 }
-
 .gallery-item:hover .img-title {
-    /*opacity: 1;*/
-
 }
-
 #dropdown{
   margin-top: 7px;
 }
 .img-title {
-  position: absolute;
-  top: 0;
-  margin: 0;
-  height: 200px;
-  width: 200px;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    height: 200px;
+    width: 200px;
+    display: none;
+    background: rgba(29, 33, 37, 0.87);
+    padding-left: 15px;
 
-  /*opacity: 0;*/
-  display: none; /* comment this out for CSS hover */
-  background: rgba(29, 33, 37, 0.87);
-  /*transition: all 0.5s ease;*/
-  padding-left: 15px;
+    p {
+        position: relative;
+        color: #fff;
+        top: 33%;
+        width: 80%;
+        text-align: left;
+        font-size: 13px;
+        letter-spacing: 0.0425em;
+      }
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      h3 {
+        position: relative;
+        text-align: center;
+        color: #fff;
+      }
+    }
 
-  p {
-      position: relative;
-      color: #fff;
-      top: 33%;
-      width: 80%;
-      text-align: left;
-      font-size: 13px;
-      letter-spacing: 0.0425em;
-  }
-    a {
-      color: #fff;
-      text-decoration: underline;
-  }
-    h3 {
-      position: relative;
-      text-align: center;
-      color: #fff;
-
-  }
-}
 
 .badge {
   display: inline-block;
