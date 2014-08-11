@@ -25,18 +25,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
 gem 'devise'
-
-
 gem 'foundation-rails'
-#gem 'foundation_rails_helper'
 gem 'paperclip'
 gem 'rmagick'
-
 gem 'js-routes'
 gem 'paloma'
-
 
 #makes working with nested forms easier
 gem "cocoon"
@@ -46,33 +40,11 @@ gem 'rails_12factor', group: :production
 
 #This is the gem for Amazon S3 storage
 gem 'aws-sdk'
-
 gem 'handlebars_assets'
-
 gem 'jquery-form-rails'
-
 gem 'mailboxer'
-# gem 'zurb-foundation'
-#gem 'foundation_rails_helper'
-
 gem 'pry', group: :development
-
 gem "font-awesome-rails"
-
-
 gem 'dotenv-rails', :groups => [:development, :test]
-
-
 gem "active_model_serializers"
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 

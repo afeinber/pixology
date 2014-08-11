@@ -23,14 +23,11 @@ Akk.Comment.prototype.remoteCreate = function(){
 };
 
 Akk.Comment.prototype.appendComment = function(comment){
-  // console.log(this.content);
-  // this.formElement.append("<h3> Comment was " + this.content + " </h3>");
-  // console.log(this);
-
   var appendix = $($(this.formElement).parents('.individual-comment')[0]).length !== 0 ? $($(this.formElement).parents('.individual-comment')[0]) : $('#image-comments');
   appendix.children('.individual-comment').slideDown(200);
   var icon = $(appendix.find('.fa-angle-double-up, .fa-angle-double-down')[0]);
   icon.toggleClass('fa-angle-double-down');
   icon.toggleClass('fa-angle-double-up');
+  //render the comment on the page
   appendix.append(HandlebarsTemplates.comment(comment));
 };

@@ -4,6 +4,7 @@
 var RemixesController = Paloma.controller('Remixes');
 restorePoints = [];
 // Executes when Rails User#new is executed.
+//This is part of Paloma, which allows page-specific Javascript.
 RemixesController.prototype.new = function(){
   $(document).ready(Drawing.initialize);
   $(document).on('page:load', Drawing.initialize);

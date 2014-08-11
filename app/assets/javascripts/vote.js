@@ -10,7 +10,6 @@ Akk.makeVote = function(event) {
   $(this).attr('disabled', 'true');
   $(this).siblings('.vote').attr('disabled', 'true');
 
-
   $.ajax({
     url: (isOnImage ? Routes.image_votes_path(votable_id) : Routes.comment_votes_path(votable_id)),
     type: (isDelete ? 'DELETE' : 'POST'),
@@ -41,5 +40,4 @@ Akk.makeVote = function(event) {
   .always(function() {
     console.log("complete");
   });
-
 };

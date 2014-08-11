@@ -37,7 +37,7 @@ class ImagesController < ApplicationController
   def update
     @image = Image.find(params[:id])
     @image.update(image_params)
-    #@image.set_categories(image_params['categories_attributes'])
+
     if @image.save
       flash[:notice] = "Your image was sucessfully created"
       redirect_to(@image)

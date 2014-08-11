@@ -6,8 +6,6 @@ Akk.initialize = function() {
    ProfileApp.initializer();
    FavoriteApp.initializer();
 
-
-
   $('.gallery-item').hover( function() {
         $(this).find('.img-title').fadeIn(300);
     }, function() {
@@ -47,7 +45,6 @@ Akk.initialize = function() {
   $('.nested-comment').hide();
   $('.comment-comment-form').hide();
 
-
   $('#image-comments').on('submit', '.new_comment_form', function(event) {
     event.preventDefault();
    Akk.createComment(event.currentTarget);
@@ -72,10 +69,13 @@ Akk.initialize = function() {
    $(this).parent().ajaxSubmit({
     beforeSubmit: function(a,f,o) {
      o.dataType = 'json';
+     //render the loading .gif
      $('img#thumb').attr('src', 'https://s3.amazonaws.com/akk-imgshare/permanent+images/C36.gif');
     },
     complete: function(XMLHttpRequest) {
+      //change the action on the form do that the post request will go to the correct image.
       $('#image-add-tags-form').attr('action', Routes.image_path(XMLHttpRequest.responseJSON.id));
+      //render the new image on the page.
       $('img#thumb').attr('src', XMLHttpRequest.responseJSON.thumb_url);
       $('#image-add-tags-form .disabled').removeAttr('disabled');
       $('#image-add-tags-form .disabled').removeClass('disabled');
@@ -89,7 +89,7 @@ Akk.initialize = function() {
   $('#image-comments').on('click', '.downvote', Akk.makeVote);
   $('#search_query').click(function(){
     if($(this).parents('form').find('#search_search_type').val() === 'Images') {
-      $(this).val('#')
+      $(this).val('#');
     }
   });
 
@@ -103,7 +103,6 @@ Akk.initialize = function() {
 
 
 Akk.createComment = function(target) {
-
   var commentPath = $(target).attr('action');
   var content = $(target).find('#comment_content').val();
 

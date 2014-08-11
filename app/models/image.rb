@@ -31,6 +31,7 @@ class Image < ActiveRecord::Base
         reverse.
         first(12)
     if imgs.count < 12
+      #just to make sure that we fill the page.
       imgs += self.first(12 - imgs.count)
     end
     imgs
