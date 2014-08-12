@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
 
   has_many :categorized_images, dependent: :destroy
 
-  accepts_nested_attributes_for :categories, :allow_destroy => true
+  accepts_nested_attributes_for :categories, :allow_destroy => true, :reject_if => proc { |attributes| !attributes['description'].present? }
 
   # This method associates the attribute ":sharedimg" with a file attachment
   has_attached_file :sharedimg, styles: {
