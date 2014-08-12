@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.where(commentable: @image)
+    @comments = Comment.where(commentable: @image).includes(:user, :comments)
   end
 
   def new
