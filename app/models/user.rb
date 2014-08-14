@@ -1,6 +1,6 @@
-include ActionView::Helpers::DateHelper
-
 class User < ActiveRecord::Base
+
+  #include ActionView::Helpers::DateHelper
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,12 +18,7 @@ class User < ActiveRecord::Base
   # mailboxer section
   acts_as_messageable
 
-  has_attached_file
-    :avatar,
-    :styles => {
-      :medium => "300x300>", :thumb => "100x100>"
-    },
-      :default_url => 'http://s3.amazonaws.com/akk-imgshare/users/avatars/000/000/005/thumb/generic_avatar.jpg?1406895462'
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => 'http://s3.amazonaws.com/akk-imgshare/users/avatars/000/000/005/thumb/generic_avatar.jpg?1406895462'
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
@@ -36,11 +31,11 @@ class User < ActiveRecord::Base
 
   #required methods for mailboxer to work
   def name
-   return self.username
+   self.username
   end
 
   def mailboxer_email(object)
-    return self.email
+    self.email
   end
 
 

@@ -43,7 +43,7 @@ class ImagesController < ApplicationController
       redirect_to(@image)
     else
       flash.now[:alert] = "Your image was not able to be saved"
-      render :new
+      redirect_to :back
     end
   end
 

@@ -2,7 +2,8 @@ class Image < ActiveRecord::Base
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :votes, as: :votable
-  has_many :categories, through: :categorized_images
+  has_many :categories, through: :categorized_images, after_add: :validate_category
+
   has_many :favorites, dependent: :destroy
 
   has_many :categorized_images, dependent: :destroy
@@ -17,6 +18,7 @@ class Image < ActiveRecord::Base
     square: '400x400#',
     medium: '600x800>'
   }
+
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :sharedimg, :content_type => /\Aimage\/.*\Z/
@@ -40,4 +42,13 @@ class Image < ActiveRecord::Base
   def self.rand_images
     self.find(Image.ids.sample(12))
   end
+
+  def validate_category(category)
+    exist_category = Category.find_by(description: category.description)
+    if exist_category
+      #janky fix
+      self.categories = self.categories - [category] + [exist_category]
+      self.save
+     end
+   end
 end

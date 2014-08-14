@@ -13,12 +13,8 @@ class Search
     if search_type == 'Users'
       User.where('username ILIKE ?', "%#{query}%")
     else
-      cats = Category.where('description ILIKE ?', query)
-      images = []
-      cats.each do |cat|
-        images += cat.images
-      end
-      images.uniq.sort { |a,b| a.created_at <=> b.created_at }.reverse
+      cats = Category.where('description ILIKE ?', "%#{query}").ids
+      Image.joins(:categorized_images).where(categorized_images: { category_id: cats }).order(created_at: :desc)
     end
   end
 end
