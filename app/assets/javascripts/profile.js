@@ -114,7 +114,7 @@ var ProfileApp = {
     event.preventDefault();
   },
   change: function(){
-   if (this.textContent==="UnFollow") {
+   if (this.textContent === "UnFollow") {
       this.textContent = "Follow";
       this.id = "follow-button";
       this.className = "tiny";

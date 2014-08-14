@@ -1,7 +1,7 @@
 <div class="row notification-index">
   <div class="medium-12 columns">
 
-  <% if current_user.mailbox.notifications.present? %>
+  <% if current_user.mailbox.notifications.any? %>
     <% current_user.mailbox.notifications.each do |notification| %>
       <%= render partial: 'notification', locals: { notification: notification } %>
     <% end%>

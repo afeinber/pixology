@@ -22,7 +22,7 @@
   </div>
   <div class="comment-comment-form row collapse">
 
-    <%= form_for new_comment, url: comment_comments_path(comment), :html => {:class => "nice new_comment_form"} do |f| %>
+    <%= form_for new_comment, url: comment_comments_path(comment), html: {class: "nice new_comment_form"} do |f| %>
       <div class="small-10 columns">
       <%= f.text_field :content, label: false, placeholder: 'Enter comment...' %>
       </div>
