@@ -22,6 +22,8 @@ class VotesController <  ApplicationController
   def destroy
     @vote = Vote.find_by(user_id: current_user.id, votable: votable)
     @vote.destroy
+
+    #https://github.com/kbparagua/paloma/issues/31
     render :json => @vote
   end
 

@@ -13,30 +13,35 @@ class User < ActiveRecord::Base
   has_many :inverse_follows, class_name: 'Follow', foreign_key: 'followee_id', dependent: :destroy
   has_many :interests, dependent: :destroy
   has_many :categories, through: :interests
-  has_many :notifications, dependent: :destroy
   has_many :votes, dependent: :destroy
 
   # mailboxer section
   acts_as_messageable
-  # Returns the name of the user
-  def name
-   return self.username
-  end
 
-  def mailboxer_email(object)
-  #Check if an email should be sent for that object
-  #if true
-    return self.email
-  #if false
-  #return nil
-  end
+  has_attached_file
+    :avatar,
+    :styles => {
+      :medium => "300x300>", :thumb => "100x100>"
+    },
+      :default_url => 'http://s3.amazonaws.com/akk-imgshare/users/avatars/000/000/005/thumb/generic_avatar.jpg?1406895462'
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => 'http://s3.amazonaws.com/akk-imgshare/users/avatars/000/000/005/thumb/generic_avatar.jpg?1406895462' #'/assets/book-:style.jpg'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
 
   def self.member_length(user_create_time)
     member_in_seconds = Time.now - user_create_time
     member_in_seconds = member_in_seconds.to_i.seconds
     time_ago_in_words(Time.now - member_in_seconds)
   end
+
+  #required methods for mailboxer to work
+  def name
+   return self.username
+  end
+
+  def mailboxer_email(object)
+    return self.email
+  end
+
+
 end

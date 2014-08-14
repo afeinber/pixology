@@ -4,7 +4,7 @@ class FollowsController < ApplicationController
 
   def create
     @follow = Follow.new(follow_params)
-    @follow.user_id = current_user.id
+    @follow.user = current_user
 
     if @follow.save
       respond_with(@follow)
