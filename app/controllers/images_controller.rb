@@ -1,9 +1,5 @@
 class ImagesController < ApplicationController
 
-  def default_serializer_options
-    {root: false}
-  end
-
   respond_to :html, :json
 
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
@@ -26,7 +22,6 @@ class ImagesController < ApplicationController
 
   def create
     @image = current_user.images.new(image_params)
-
     if @image.save
       respond_with @image
     else
