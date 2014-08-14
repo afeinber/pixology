@@ -3,18 +3,18 @@ var Akk = Akk || {};
 Akk.initialize = function() {
   $(document).foundation();
 
-   ProfileApp.initializer();
-   FavoriteApp.initializer();
+  ProfileApp.initializer();
+  FavoriteApp.initializer();
 
   $('.gallery-item').hover( function() {
-        $(this).find('.img-title').fadeIn(300);
-    }, function() {
-        $(this).find('.img-title').fadeOut(100);
+    $(this).find('.img-title').fadeIn(300);
+  }, function() {
+    $(this).find('.img-title').fadeOut(100);
   });
 
   $('.search-banner').hide();
   $('.smile-tab').click( function() {
-        $('.search-banner').slideToggle();
+    $('.search-banner').slideToggle();
   });
 
   $('#image-comments').on('click', '.expander', function(event) {
@@ -47,14 +47,14 @@ Akk.initialize = function() {
 
   $('#image-comments').on('submit', '.new_comment_form', function(event) {
     event.preventDefault();
-   Akk.createComment(event.currentTarget);
-   $(this).parents('.comment-comment-form').hide();
- });
+    Akk.createComment(event.currentTarget);
+    $(this).parents('.comment-comment-form').hide();
+  });
 
   $('#new_image_comment_form').on('submit', function(event) {
     event.preventDefault();
-   Akk.createComment(event.currentTarget);
- });
+    Akk.createComment(event.currentTarget);
+  });
 
   $('#image-comments').on('click', '.expand-comments', function(event){
     event.preventDefault();
@@ -71,8 +71,8 @@ Akk.initialize = function() {
      o.dataType = 'json';
      //render the loading .gif
      $('img#thumb').attr('src', 'https://s3.amazonaws.com/akk-imgshare/permanent+images/C36.gif');
-    },
-    complete: function(XMLHttpRequest) {
+   },
+   complete: function(XMLHttpRequest) {
       //change the action on the form do that the post request will go to the correct image.
       $('#image-add-tags-form').attr('action', Routes.image_path(XMLHttpRequest.responseJSON.id));
       //render the new image on the page.
@@ -80,8 +80,8 @@ Akk.initialize = function() {
       $('#image-add-tags-form .disabled').removeAttr('disabled');
       $('#image-add-tags-form .disabled').removeClass('disabled');
     },
-   });
   });
+ });
 
   $('#image-stats .upvote').click(Akk.makeVote);
   $('#image-stats .downvote').click(Akk.makeVote);

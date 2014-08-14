@@ -1,12 +1,12 @@
 <div class="row homepage">
   <div class="medium-12 columns">
 
-    <%= render partial: 'island', locals: { images: @hot_right_now } %>
+    <%= render partial: 'island', locals: { images: @hot_right_now, title: 'hot right now' } %>
 
     <%= render @categories %>
 <!-- Start Accordion section !!!!!!!!!!!!!-->
 
     <div class="home-spacer"></div>
-    <%=  render partial: 'island', locals: { images: @fresh_pics } %>
+    <%=  render partial: 'island', locals: { images: @fresh_pics, title: 'fresh pics' } %>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<% cache(image) do %>
+  <div class="gallery-item">
+    <%= link_to image_tag(image.sharedimg.url(:thumb)), image %>
+    <div class="img-title">
+      <h4><strong><%= link_to(image.caption, image) %></strong></h4>
+      <p>Added by <%= link_to image.user.username, user_path(image.user) %><br><%= time_ago_in_words(image.created_at) %> ago</p>
+      <div class="text-center"><%= link_to('View', image, class: "checkit small button")  %></div>
+    </div>
+  </div>
+<% end %>
