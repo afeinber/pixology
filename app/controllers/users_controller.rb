@@ -5,7 +5,4 @@ class UsersController < ApplicationController
     @member_length = User.member_length(@user.created_at)
   end
 
-
-
-
 end

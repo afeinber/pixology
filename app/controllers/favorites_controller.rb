@@ -12,12 +12,8 @@ class FavoritesController < ApplicationController
       @favorite
     )
 
-    if @favorite.save
-      respond_with(@favorite)
-    else
-      respond_with(@favorite.errors)
-    end
-
+    @favorite.save!
+    respond_with(@favorite)
   end
 
   def destroy

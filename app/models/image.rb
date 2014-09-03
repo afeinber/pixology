@@ -49,6 +49,6 @@ class Image < ActiveRecord::Base
       #janky fix
       self.categories = self.categories - [category] + [exist_category]
       self.save
-     end
-   end
+    end
+  end
 end

@@ -1,27 +1,22 @@
 class VotesController <  ApplicationController
 
-
   before_action :authenticate_user!
-
-  def default_serializer_options
-    {root: false}
-  end
   respond_to :json
 
 
   def create
     @vote = current_user.votes.new(vote_params)
     @vote.votable = votable
-    if (tbd = Vote.find_by(user_id: current_user.id, votable: votable)).present?
-      tbd.destroy
-    end
-    @vote.save
+
+    @vote = Vote.find_or_initialize_by(user_id: current_user.id, votable: votable)
+    @vote.update(vote_params)
+    @vote.save!
     respond_with(@vote.votable, @vote)
   end
 
   def destroy
     @vote = Vote.find_by(user_id: current_user.id, votable: votable)
-    @vote.destroy
+    @vote.destroy!
 
     #https://github.com/kbparagua/paloma/issues/31
     render :json => @vote
