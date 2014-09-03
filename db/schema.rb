@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731220137) do
+ActiveRecord::Schema.define(version: 20140903230949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20140731220137) do
     t.integer "category_id"
     t.integer "image_id"
   end
+
+  add_index "categorized_images", ["category_id"], name: "index_categorized_images_on_category_id", using: :btree
+  add_index "categorized_images", ["image_id"], name: "index_categorized_images_on_image_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.text     "content",          null: false
@@ -43,6 +46,9 @@ ActiveRecord::Schema.define(version: 20140731220137) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "favorites", ["image_id"], name: "index_favorites_on_image_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "follows", force: true do |t|
     t.integer "user_id",     null: false

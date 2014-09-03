@@ -6,17 +6,14 @@ class FollowsController < ApplicationController
     @follow = Follow.new(follow_params)
     @follow.user = current_user
 
-    if @follow.save
-      respond_with(@follow)
-    else
-      respond_with(@follow.errors)
-    end
+    @follow.save!
+    respond_with(@follow)
 
   end
 
   def destroy
     @follow = Follow.find(params[:id])
-    @follow.destroy
+    @follow.destroy!
 
     head :no_content
   end

@@ -5,8 +5,8 @@
     <% end %>
 
   <div class="title-island"><h1><%= title %></h1></div>
-    <% if images[5,6].any? %>
-      <% images[5,6].each do |image| %>
+    <% if images[6,6].any? %>
+      <% images[6,6].each do |image| %>
         <%= render partial: 'pic', locals: { image: image } %>
       <% end %>
     <% end %>

@@ -12,18 +12,14 @@ class FavoritesController < ApplicationController
       @favorite
     )
 
-    if @favorite.save
-      respond_with(@favorite)
-    else
-      respond_with(@favorite.errors)
-    end
-
+    @favorite.save!
+    respond_with(@favorite)
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     Mailboxer::Notification.where(notified_object: @favorite).each(&:destroy)
-    @favorite.destroy
+    @favorite.destroy!
 
     head :no_content
   end

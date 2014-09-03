@@ -44,7 +44,7 @@ class ImagesController < ApplicationController
 
   def destroy
     @image = current_user.images.find(params[:id])
-    @image.destroy
+    @image.destroy!
 
     head :no_content
   end
