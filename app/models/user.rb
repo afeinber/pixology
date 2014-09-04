@@ -22,13 +22,6 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-
-  def self.member_length(user_create_time)
-    member_in_seconds = Time.now - user_create_time
-    member_in_seconds = member_in_seconds.to_i.seconds
-    time_ago_in_words(Time.now - member_in_seconds)
-  end
-
   #required methods for mailboxer to work
   def name
    self.username

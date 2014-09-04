@@ -30,6 +30,10 @@ module ApplicationHelper
     end
   end
 
+  def member_length(user)
+    time_ago_in_words((Time.now - user.created_at).to_i.seconds.ago)
+  end
+
 
   def vote_class(votable, is_upvote)
     if user_signed_in?

@@ -11,7 +11,7 @@
       <div class="content active" id="profile">
         <div class="panel callout radius text-center">
           <h1> <%= @user.username %> </h1>
-          <small>Has been a member for <%= @member_length %></small>
+          <small>Has been a member for <%= member_length(@user) %></small>
           <p><%= image_tag @user.avatar.url(:thumb) %> </p>
           <% if user_signed_in? %>
             <% if current_user.follows.find_by_followee_id(@user.id).present? %>
