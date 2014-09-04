@@ -3,15 +3,12 @@ class InterestsController < ApplicationController
   respond_to :json
 
   def create
-    @interest = Interest.find_or_create_by(interest_params)
-    @interest.user_id = current_user.id
+    # binding.pry
+    category = Category.find_or_create_by(category_params)
+    interest = Interest.find_or_create_by(category: category, user: current_user)
 
-    if @interest.save
-      respond_with(@interest)
-    else
-      respond_with(@interest.errors)
-    end
-
+    interest.save!
+    respond_with(interest)
   end
 
   def destroy
@@ -21,10 +18,7 @@ class InterestsController < ApplicationController
     head :no_content
   end
 
-  private
-
-  def interest_params
-    params.require(:interest).permit(:category_id)
+  def category_params
+    params.require(:category).permit(:description)
   end
-
 end
