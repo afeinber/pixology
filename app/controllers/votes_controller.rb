@@ -5,8 +5,6 @@ class VotesController <  ApplicationController
 
 
   def create
-    @vote = current_user.votes.new(vote_params)
-    @vote.votable = votable
 
     @vote = Vote.find_or_initialize_by(user_id: current_user.id, votable: votable)
     @vote.update(vote_params)
