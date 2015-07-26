@@ -26,12 +26,16 @@ class Image < ActiveRecord::Base
   validates :user, presence: true
 
   def self.hot_right_now
-    imgs = self.
-        where('created_at > ?', 1.day.ago).
-        to_a.
-        sort { |a,b| a.votes.where(is_upvote: true).count <=> b.votes.where(is_upvote: true).count }.
-        reverse.
-        first(12)
+    imgs = self.find_by_sql(<<-SQL
+        SELECT COUNT(votes.id) AS vote_count, images.*
+        FROM images
+        LEFT OUTER JOIN votes
+        ON votes.votable_id=images.id AND votes.votable_type = 'Image'
+        GROUP BY images.id
+        ORDER BY vote_count desc
+        LIMIT 12
+      SQL
+    )
     if imgs.count < 12
       #just to make sure that we fill the page.
       imgs += self.first(12 - imgs.count)
