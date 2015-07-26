@@ -6,14 +6,14 @@ class VotesController <  ApplicationController
 
   def create
 
-    @vote = Vote.find_or_initialize_by(user_id: current_user.id, votable: votable)
+    @vote = Vote.find_or_initialize_by(user: current_user, votable: votable)
     @vote.update(vote_params)
     @vote.save!
     respond_with(@vote.votable, @vote)
   end
 
   def destroy
-    @vote = Vote.find_by(user_id: current_user.id, votable: votable)
+    @vote = Vote.find_by(user: current_user, votable: votable)
     @vote.destroy!
 
     #https://github.com/kbparagua/paloma/issues/31
