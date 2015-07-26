@@ -31,6 +31,7 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'js-routes'
 gem 'paloma'
+gem 'fog',  group: :development
 
 #makes working with nested forms easier
 gem "cocoon"
