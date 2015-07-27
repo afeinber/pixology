@@ -13,8 +13,8 @@ class Search
     if search_type == 'Users'
       User.where('username ILIKE ?', "%#{query}%")
     else
-      cats = Category.where('description ILIKE ?', "%#{query}").ids
-      Image.joins(:categorized_images).where(categorized_images: { category_id: cats }).order(created_at: :desc)
+      cats = Category.where('description ILIKE ?', "%#{query}")
+      Image.joins(:categorized_images).where(categorized_images: { category: cats }).order(created_at: :desc)
     end
   end
 end
