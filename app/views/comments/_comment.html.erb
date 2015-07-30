@@ -17,7 +17,17 @@
       <p><strong><%=comment.user.username%></strong> <%= time_ago_in_words(comment.created_at) %> ago</p>
     </div>
     <div class="medium-2 columns">
-      <p class="right footer-icons"><a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp; <a class="expand-comments"> <%= fa_icon 'angle-double-down' %></a></p>
+      <p class="right footer-icons">
+        <a href='#' class="comment-reply"><%= fa_icon 'edit'%></a> &nbsp;
+        <% if comment.user == current_user %>
+          <%= link_to comment, method: :delete, class: "comment-delete" do %>
+            <%= fa_icon 'times'%></a> &nbsp;
+          <% end %>
+
+        <% end %>
+
+        <a class="expand-comments"> <%= fa_icon 'angle-double-down' %></a>
+      </p>
     </div>
   </div>
   <div class="comment-comment-form row collapse">

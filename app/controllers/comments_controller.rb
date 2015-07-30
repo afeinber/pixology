@@ -17,6 +17,12 @@ class CommentsController < ApplicationController
 
   end
 
+  def destroy
+    if Comment.where(id: params[:id], user: current_user).destroy_all
+      head :no_content
+    end
+  end
+
   private
 
   def commentable

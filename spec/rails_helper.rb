@@ -36,6 +36,7 @@ RSpec.configure do |config|
   require 'support/database_cleaner'
 
   config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, :type => :controller
 
 
 
